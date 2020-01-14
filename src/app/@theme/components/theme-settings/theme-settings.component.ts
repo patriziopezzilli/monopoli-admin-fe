@@ -6,31 +6,6 @@ import { StateService } from '../../../@core/utils';
   selector: 'ngx-theme-settings',
   styleUrls: ['./theme-settings.component.scss'],
   template: `
-    <h6>LAYOUTS</h6>
-    <div class="settings-row">
-      <a *ngFor="let layout of layouts"
-         href="#"
-         [class.selected]="layout.selected"
-         [attr.title]="layout.name"
-         (click)="layoutSelect(layout)">
-        <i [attr.class]="layout.icon"></i>
-      </a>
-    </div>
-    <h6>SIDEBAR</h6>
-    <div class="settings-row">
-      <a *ngFor="let sidebar of sidebars"
-         href="#"
-         [class.selected]="sidebar.selected"
-         [attr.title]="sidebar.name"
-         (click)="sidebarSelect(sidebar)">
-        <i [attr.class]="sidebar.icon"></i>
-      </a>
-    </div>
-    <div class="settings-row">
-      <div class="switcher">
-        <ngx-layout-direction-switcher></ngx-layout-direction-switcher>
-      </div>
-    </div>
   `,
 })
 export class ThemeSettingsComponent {
