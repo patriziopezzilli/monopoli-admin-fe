@@ -99,7 +99,7 @@ export const NB_CORE_PROVIDERS = [
           return token;
           },
        },
-        baseEndpoint: 'http://localhost:8888/nebular',
+        baseEndpoint: 'http://monopoli-backend.herokuapp.com/monopoli-be/api',
         login: {
           endpoint: '/auth/login',
         },
@@ -152,7 +152,7 @@ export const NB_CORE_PROVIDERS = [
         strategy: 'email',
       },
     },
-  }).providers, 
+  }).providers,
   {
     provide: NbRoleProvider, useClass: AppRoleProvider,
   },
