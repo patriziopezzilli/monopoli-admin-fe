@@ -37,8 +37,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Lista sottoscritti',
         link: '/pages/extra-components/calendar',
       },
+    ],
   },
-]
-},
-],
-;
+];
