@@ -3,7 +3,7 @@ import {Observable} from 'rxjs/Observable';
 
 import {NbAuthJWTToken, NbAuthService} from '@nebular/auth';
 import {NbRoleProvider} from '@nebular/security';
-import {User} from 'app/Models/User';
+import {User} from './models/User';
 import {map} from 'rxjs/operators';
 
 
