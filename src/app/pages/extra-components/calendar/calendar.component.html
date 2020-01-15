@@ -1,23 +1,10 @@
-<div class="row">
-  <div class="nebular-calendar col-md-12 col-lg-6 col-xxxl-4">
-    <h2>
-      Selected date: {{ date | date }}
-    </h2>
-    <nb-calendar [(date)]="date" [boundingMonth]="true"></nb-calendar>
-  </div>
-  <div class="nebular-calendar col-md-12 col-lg-6 col-xxxl-4">
-    <h2>
-      Selected range: {{ range.start | date }} - {{ range.end | date }}
-    </h2>
-    <nb-calendar-range [(range)]="range"></nb-calendar-range>
-  </div>
-  <div class="nebular-calendar col-md-12 col-lg-6 col-xxxl-4">
-    <h2>
-      Selected date: {{ date2 | date }}
-    </h2>
-    <nb-calendar
-      [(date)]="date2"
-      [dayCellComponent]="dayCellComponent"
-    ></nb-calendar>
-  </div>
-</div>
+<nb-card size="medium">
+  <nb-card-header>
+    Utenti sottoscritti al Menù del giorno
+  </nb-card-header>
+  <nb-list>
+    <nb-list-item *ngFor="let usr of users">
+      {{usr.mail}}
+    </nb-list-item>
+  </nb-list>
+</nb-card>

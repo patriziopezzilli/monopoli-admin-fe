@@ -17,8 +17,8 @@ export class ECommerceProgressSectionComponent implements OnDestroy {
     this.statsProgressBarService.getProgressInfoData()
       .pipe(takeWhile(() => this.alive))
       .subscribe((data) => {
-        this.progressInfoData = data;
-      });
+      this.progressInfoData = data;
+    });
   }
 
   ngOnDestroy() {

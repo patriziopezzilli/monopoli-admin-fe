@@ -3,7 +3,7 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-import { Component, OnInit } from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 import { AnalyticsService } from './@core/utils/analytics.service';
 
 @Component({
@@ -18,4 +18,9 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.analytics.trackPageViews();
   }
+}
+
+@Injectable()
+export class Configuration {
+  public static server = 'https://monopoli-backend.herokuapp.com/monopoli-be/api';
 }
