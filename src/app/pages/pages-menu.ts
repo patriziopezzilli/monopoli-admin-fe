@@ -13,7 +13,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Menu',
-    icon: 'book-open-outline',
+    icon: 'nb-menu',
     link: '/pages/tasks',
     data: {
       permission: 'view',
@@ -22,7 +22,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Menu del Giorno',
-    icon: 'nb-home',
+    icon: 'nb-person',
     link: '/pages/tasks',
     data: {
       permission: 'view',
