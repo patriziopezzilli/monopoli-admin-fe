@@ -13,7 +13,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Menu',
-    icon: 'nb-home',
+    icon: 'nb-book-open-outline',
     link: '/pages/tasks',
     data: {
       permission: 'view',
