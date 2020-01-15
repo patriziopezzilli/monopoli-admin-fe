@@ -30,8 +30,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
     },
     children: [
       {
+        title: 'Menù di oggi',
+        link: '/pages/extra-components/calendar-kit',
+      },
+      {
         title: 'Inserisci',
-        link: '/pages/extra-components/calendar',
+        link: '/pages/extra-components/list',
       },
       {
         title: 'Lista sottoscritti',

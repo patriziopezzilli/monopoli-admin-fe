@@ -1,12 +1,40 @@
-<nb-card>
-  <nb-card-header>
-    <p><code>NbCalendarKitModule</code> is a module that contains multiple useful components for building custom calendars.
-      So if you think our calendars is not enough powerful for you just use calendar-kit and build your own calendar!</p>
-  </nb-card-header>
-  <nb-card-body>
-    <nb-calendar-month-picker
-      [(month)]="month"
-      [cellComponent]="monthCellComponent"
-    ></nb-calendar-month-picker>
-  </nb-card-body>
-</nb-card>
+<nb-card-header>
+  Menù di Oggi
+</nb-card-header>
+
+<div class="lists row">
+  <div class="col-md-12 col-lg-6 col-xxxl-6">
+    <nb-card class="list-card" size="small">
+      <nb-card-header>Primi</nb-card-header>
+      <nb-list>
+        <nb-list-item *ngFor="let primo of primi">
+          <nb-user [name]="primo.nome" [title]="primo.prezzo">
+          </nb-user>
+        </nb-list-item>
+      </nb-list>
+    </nb-card>
+  </div>
+  <div class="col-md-12 col-lg-6 col-xxxl-6">
+    <nb-card class="list-card" size="small">
+      <nb-card-header>Secondi</nb-card-header>
+      <nb-list>
+        <nb-list-item *ngFor="let secondo of secondi">
+          <nb-user [name]="secondo.nome" [title]="secondo.prezzo">
+          </nb-user>
+        </nb-list-item>
+      </nb-list>
+    </nb-card>
+  </div>
+  <div class="col-md-12 col-lg-12 col-xxxl-12">
+    <nb-card class="list-card" size="small">
+      <nb-card-header>Pizze</nb-card-header>
+      <nb-list>
+        <nb-list-item *ngFor="let pizza of pizze">
+          <nb-user [name]="pizza.nome" [title]="pizza.prezzo">
+          </nb-user>
+        </nb-list-item>
+      </nb-list>
+    </nb-card>
+  </div>
+</div>
+

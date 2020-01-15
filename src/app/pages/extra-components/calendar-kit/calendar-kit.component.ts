@@ -1,5 +1,10 @@
-import { Component } from '@angular/core';
-import { CalendarKitMonthCellComponent } from './month-cell/month-cell.component';
+import {Component} from '@angular/core';
+import {CalendarKitMonthCellComponent} from './month-cell/month-cell.component';
+import {Pasto} from '../../../@core/data/stats-progress-bar';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {Configuration} from '../../../app.component';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'ngx-calendar-kit',
@@ -8,6 +13,56 @@ import { CalendarKitMonthCellComponent } from './month-cell/month-cell.component
   entryComponents: [CalendarKitMonthCellComponent],
 })
 export class CalendarKitFullCalendarShowcaseComponent {
-  month = new Date();
-  monthCellComponent = CalendarKitMonthCellComponent;
+
+  primi: Pasto[];
+  secondi: Pasto[];
+  pizze: Pasto[];
+
+  constructor(private http: HttpClient) {
+    this.getPrimi()
+      .subscribe((data) => {
+        this.primi = data;
+      });
+    this.getSecondi()
+      .subscribe((data) => {
+        this.secondi = data;
+      });
+    this.getPizza()
+      .subscribe((data) => {
+        this.pizze = data;
+      });
+  }
+
+  getPrimi(): Observable<Pasto[]> {
+    return this.http.get<Pasto[]>(Configuration.server + '/menudelgiorno?categoria=primo')
+      .pipe(
+        map(
+          (data: Pasto[]) => data.map(event => {
+            return new Pasto(event.nome, event.descrizione, event.prezzo, event.categoria);
+          }),
+        ),
+      );
+  }
+
+  getSecondi(): Observable<Pasto[]> {
+    return this.http.get<Pasto[]>(Configuration.server + '/menudelgiorno?categoria=secondo')
+      .pipe(
+        map(
+          (data: Pasto[]) => data.map(event => {
+            return new Pasto(event.nome, event.descrizione, event.prezzo, event.categoria);
+          }),
+        ),
+      );
+  }
+
+  getPizza(): Observable<Pasto[]> {
+    return this.http.get<Pasto[]>(Configuration.server + '/menudelgiorno?categoria=pizza')
+      .pipe(
+        map(
+          (data: Pasto[]) => data.map(event => {
+            return new Pasto(event.nome, event.descrizione, event.prezzo, event.categoria);
+          }),
+        ),
+      );
+  }
 }

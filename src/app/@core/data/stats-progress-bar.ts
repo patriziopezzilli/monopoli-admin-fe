@@ -17,6 +17,16 @@ export class Sottoscritto {
   }
 }
 
+export class Pasto {
+  constructor(
+    public nome: string,
+    public descrizione: string,
+    public prezzo: string,
+    public categoria: string,
+  ) {
+  }
+}
+
 
 export abstract class StatsProgressBarData {
   abstract getProgressInfoData(): Observable<ProgressInfo[]>;
