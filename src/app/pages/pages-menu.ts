@@ -14,6 +14,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Menu',
     icon: 'nb-menu',
+    hidden: true,
     link: '/pages/tasks',
     data: {
       permission: 'view',
