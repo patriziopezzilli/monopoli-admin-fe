@@ -1,6 +1,22 @@
-<nb-card-header>
-  Menù di Oggi
-</nb-card-header>
+<div class="lists row">
+  <div class="col-md-12 col-lg-12 col-xxxl-12" style="text-align:center;">
+    <nb-card size="xsmall">
+      <nb-card-header>Menù del Giorno</nb-card-header>
+
+      <nb-card-body>
+        <nb-list>
+          <nb-list-item>
+            <button (click)="inviaStampa()" type="button" fullWidth nbButton>Invia in stampa</button>
+          </nb-list-item>
+          <nb-list-item>
+            <button (click)="inviaMail()" type="button" fullWidth nbButton>Invia ai clienti</button>
+          </nb-list-item>
+        </nb-list>
+      </nb-card-body>
+
+    </nb-card>
+  </div>
+</div>
 
 <div class="lists row">
   <div class="col-md-12 col-lg-6 col-xxxl-6">

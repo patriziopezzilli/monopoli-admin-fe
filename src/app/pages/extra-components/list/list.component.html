@@ -1,26 +1,113 @@
-<div class="lists row">
-  <div class="col-md-12 col-lg-6 col-xxxl-6">
-    <nb-card class="list-card">
-      <nb-card-header>Some Fruits</nb-card-header>
-      <nb-card-body>
-        <nb-list>
-          <nb-list-item *ngFor="let fruit of fruits">
-            {{ fruit }}
-          </nb-list-item>
-        </nb-list>
-      </nb-card-body>
-    </nb-card>
-  </div>
+<nb-card>
+  <nb-card-body>
+    <nb-stepper orientation="horizontal">
+      <nb-step label="Benvenuto">
+        <nb-layout center>
+          <nb-layout-header><h2>Benvenuto</h2></nb-layout-header>
 
-  <div class="col-md-12 col-lg-6 col-xxxl-6">
-    <nb-card class="list-card" size="small">
-      <nb-card-header>Users</nb-card-header>
-      <nb-list>
-        <nb-list-item *ngFor="let user of users">
-          <nb-user [name]="user.name" [title]="user.title">
-          </nb-user>
-        </nb-list-item>
-      </nb-list>
-    </nb-card>
-  </div>
-</div>
+          <nb-layout-column>
+            Hello World!
+          </nb-layout-column>
+
+          <nb-layout-footer>
+            <button class="next-button" nbButton nbStepperNext>Avanti</button>
+          </nb-layout-footer>
+        </nb-layout>
+      </nb-step>
+      <nb-step label="Primi">
+        <nb-layout center>
+          <nb-layout-header><h2>Primi</h2></nb-layout-header>
+
+          <nb-layout-column>
+            <nb-card>
+              <nb-card-body>
+                <nb-list>
+                  <nb-list-item><input type="text" nbInput fullWidth status="basic"
+                                       placeholder="Prima portata | categoria Primi"></nb-list-item>
+                  <nb-list-item><input type="text" nbInput fullWidth status="basic"
+                                       placeholder="Seconda portata | categoria Primi"></nb-list-item>
+                  <nb-list-item><input type="text" nbInput fullWidth status="basic"
+                                       placeholder="Terza portata | categoria Primi"></nb-list-item>
+                  <nb-list-item><input type="text" nbInput fullWidth status="basic"
+                                       placeholder="Quarta portata | categoria Primi"></nb-list-item>
+                  <nb-list-item><input type="text" nbInput fullWidth status="basic"
+                                       placeholder="Quinta portata | categoria Primi"></nb-list-item>
+                </nb-list>
+              </nb-card-body>
+            </nb-card>
+          </nb-layout-column>
+          <nb-layout-footer>
+            <button class="prev-button" style="margin-right: 1.5em" nbButton nbStepperPrevious>Indietro</button>
+            <button class="next-button" nbButton nbStepperNext>Avanti</button>
+          </nb-layout-footer>
+        </nb-layout>
+      </nb-step>
+      <nb-step label="Secondi">
+        <nb-layout center>
+          <nb-layout-header><h2>Secondi</h2></nb-layout-header>
+
+          <nb-layout-column>
+            <nb-card>
+              <nb-card-body>
+                <nb-list>
+                  <nb-list-item><input type="text" nbInput fullWidth status="basic"
+                                       placeholder="Prima portata | categoria Secondi"></nb-list-item>
+                  <nb-list-item><input type="text" nbInput fullWidth status="basic"
+                                       placeholder="Seconda portata | categoria Secondi"></nb-list-item>
+                  <nb-list-item><input type="text" nbInput fullWidth status="basic"
+                                       placeholder="Terza portata | categoria Secondi"></nb-list-item>
+                  <nb-list-item><input type="text" nbInput fullWidth status="basic"
+                                       placeholder="Quarta portata | categoria Secondi"></nb-list-item>
+                  <nb-list-item><input type="text" nbInput fullWidth status="basic"
+                                       placeholder="Quinta portata | categoria Secondi"></nb-list-item>
+                </nb-list>
+              </nb-card-body>
+            </nb-card>
+          </nb-layout-column>
+
+          <nb-layout-footer>
+            <button class="prev-button" style="margin-right: 1.5em" nbButton nbStepperPrevious>Indietro</button>
+            <button class="next-button" nbButton nbStepperNext>Avanti</button>
+          </nb-layout-footer>
+        </nb-layout>
+      </nb-step>
+      <nb-step label="Pizze">
+        <nb-layout center>
+          <nb-layout-header><h2>Pizze</h2></nb-layout-header>
+
+          <nb-layout-column>
+            <nb-card>
+              <nb-card-body>
+                <nb-list>
+                  <nb-list-item><input type="text" nbInput fullWidth status="basic"
+                                       placeholder="Prima portata | categoria Pizze"></nb-list-item>
+                  <nb-list-item><input type="text" nbInput fullWidth status="basic"
+                                       placeholder="Seconda portata | categoria Pizze"></nb-list-item>
+                </nb-list>
+              </nb-card-body>
+            </nb-card>
+          </nb-layout-column>
+
+          <nb-layout-footer>
+            <button class="prev-button" style="margin-right: 1.5em" nbButton nbStepperPrevious>Indietro</button>
+            <button class="next-button" nbButton nbStepperNext>Avanti</button>
+          </nb-layout-footer>
+        </nb-layout>
+      </nb-step>
+      <nb-step label="Conferma">
+        <nb-layout center>
+          <nb-layout-header><h2>Conferma e salva</h2></nb-layout-header>
+
+          <nb-layout-column>
+            Hello World!
+          </nb-layout-column>
+
+          <nb-layout-footer>
+            <button class="prev-button" style="margin-right: 1.5em" nbButton nbStepperPrevious>Indietro</button>
+            <button nbButton>Conferma</button>
+          </nb-layout-footer>
+        </nb-layout>
+      </nb-step>
+    </nb-stepper>
+  </nb-card-body>
+</nb-card>

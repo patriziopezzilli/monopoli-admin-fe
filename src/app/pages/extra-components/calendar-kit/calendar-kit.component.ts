@@ -33,6 +33,14 @@ export class CalendarKitFullCalendarShowcaseComponent {
       });
   }
 
+  public inviaMail() {
+    this.http.get<Pasto[]>(Configuration.server + '/menudelgiorno/mail');
+  }
+
+  public inviaStampa() {
+    this.http.get<Pasto[]>(Configuration.server + '/menudelgiorno/stampa');
+  }
+
   getPrimi(): Observable<Pasto[]> {
     return this.http.get<Pasto[]>(Configuration.server + '/menudelgiorno?categoria=primo')
       .pipe(
