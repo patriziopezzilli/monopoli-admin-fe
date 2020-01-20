@@ -1,113 +1,169 @@
-<nb-card>
-  <nb-card-body>
-    <nb-stepper orientation="horizontal">
-      <nb-step label="Benvenuto">
-        <nb-layout center>
-          <nb-layout-header><h2>Benvenuto</h2></nb-layout-header>
+<!--<nb-card>
+  <nb-card-body> -->
+<nb-stepper orientation="horizontal">
+  <nb-step label="Benvenuto">
+    <nb-layout>
+      <nb-layout-header><h2>Benvenuto</h2></nb-layout-header>
 
-          <nb-layout-column>
-            Hello World!
-          </nb-layout-column>
+      <nb-layout-column>
+        Ciao! Nella seguente sezione potrai creare il menù del giorno e confermarlo per la pubblicazione sul sito!
+        Prosegui nei vari step e vai avanti / indietro con i pulsanti in basso. Una volta sicuro/a del menù vai all'ultima pagina e premi conferma!
 
-          <nb-layout-footer>
-            <button class="next-button" nbButton nbStepperNext>Avanti</button>
-          </nb-layout-footer>
-        </nb-layout>
-      </nb-step>
-      <nb-step label="Primi">
-        <nb-layout center>
-          <nb-layout-header><h2>Primi</h2></nb-layout-header>
+        Enjoy!
+      </nb-layout-column>
 
-          <nb-layout-column>
-            <nb-card>
-              <nb-card-body>
-                <nb-list>
-                  <nb-list-item><input type="text" nbInput fullWidth status="basic"
-                                       placeholder="Prima portata | categoria Primi"></nb-list-item>
-                  <nb-list-item><input type="text" nbInput fullWidth status="basic"
-                                       placeholder="Seconda portata | categoria Primi"></nb-list-item>
-                  <nb-list-item><input type="text" nbInput fullWidth status="basic"
-                                       placeholder="Terza portata | categoria Primi"></nb-list-item>
-                  <nb-list-item><input type="text" nbInput fullWidth status="basic"
-                                       placeholder="Quarta portata | categoria Primi"></nb-list-item>
-                  <nb-list-item><input type="text" nbInput fullWidth status="basic"
-                                       placeholder="Quinta portata | categoria Primi"></nb-list-item>
-                </nb-list>
-              </nb-card-body>
-            </nb-card>
-          </nb-layout-column>
-          <nb-layout-footer>
-            <button class="prev-button" style="margin-right: 1.5em" nbButton nbStepperPrevious>Indietro</button>
-            <button class="next-button" nbButton nbStepperNext>Avanti</button>
-          </nb-layout-footer>
-        </nb-layout>
-      </nb-step>
-      <nb-step label="Secondi">
-        <nb-layout center>
-          <nb-layout-header><h2>Secondi</h2></nb-layout-header>
+      <nb-layout-footer>
+        <button class="next-button" nbButton nbStepperNext>Avanti</button>
+      </nb-layout-footer>
+    </nb-layout>
+  </nb-step>
+  <nb-step label="Primi">
+    <nb-layout center>
+      <nb-layout-header><h2>Primi del giorno</h2></nb-layout-header>
 
-          <nb-layout-column>
-            <nb-card>
-              <nb-card-body>
-                <nb-list>
-                  <nb-list-item><input type="text" nbInput fullWidth status="basic"
-                                       placeholder="Prima portata | categoria Secondi"></nb-list-item>
-                  <nb-list-item><input type="text" nbInput fullWidth status="basic"
-                                       placeholder="Seconda portata | categoria Secondi"></nb-list-item>
-                  <nb-list-item><input type="text" nbInput fullWidth status="basic"
-                                       placeholder="Terza portata | categoria Secondi"></nb-list-item>
-                  <nb-list-item><input type="text" nbInput fullWidth status="basic"
-                                       placeholder="Quarta portata | categoria Secondi"></nb-list-item>
-                  <nb-list-item><input type="text" nbInput fullWidth status="basic"
-                                       placeholder="Quinta portata | categoria Secondi"></nb-list-item>
-                </nb-list>
-              </nb-card-body>
-            </nb-card>
-          </nb-layout-column>
+      <nb-layout-column>
+        <!-- <nb-card>
+          <nb-card-body> -->
+        <nb-list>
+          <nb-list-item>
+            <input type="text" style="margin-bottom: 1em;" nbInput fullWidth status="basic">
+            <input type="text" nbInput status="basic"> €
+          </nb-list-item>
+          <nb-list-item>
+            <input type="text" style="margin-bottom: 1em;" nbInput fullWidth status="basic">
+            <input type="text" nbInput status="basic"> €
+          </nb-list-item>
+          <nb-list-item>
+            <input type="text" style="margin-bottom: 1em;" nbInput fullWidth status="basic">
+            <input type="text" nbInput status="basic"> €
+          </nb-list-item>
+          <nb-list-item>
+            <input type="text" style="margin-bottom: 1em;" nbInput fullWidth status="basic">
+            <input type="text" nbInput status="basic"> €
+          </nb-list-item>
+          <nb-list-item>
+            <input type="text" style="margin-bottom: 1em;" nbInput fullWidth status="basic">
+            <input type="text" nbInput status="basic"> €
+          </nb-list-item>
+        </nb-list>
+        <!--  </nb-card-body>
+        </nb-card> -->
+      </nb-layout-column>
+      <nb-layout-footer>
+        <button class="prev-button" style="margin-right: 1.5em" nbButton nbStepperPrevious>Indietro</button>
+        <button class="next-button" nbButton nbStepperNext>Avanti</button>
+      </nb-layout-footer>
+    </nb-layout>
+  </nb-step>
+  <nb-step label="Secondi">
+    <nb-layout center>
+      <nb-layout-header><h2>Secondi del giorno</h2></nb-layout-header>
 
-          <nb-layout-footer>
-            <button class="prev-button" style="margin-right: 1.5em" nbButton nbStepperPrevious>Indietro</button>
-            <button class="next-button" nbButton nbStepperNext>Avanti</button>
-          </nb-layout-footer>
-        </nb-layout>
-      </nb-step>
-      <nb-step label="Pizze">
-        <nb-layout center>
-          <nb-layout-header><h2>Pizze</h2></nb-layout-header>
+      <nb-layout-column>
+        <nb-list>
+          <nb-list-item>
+            <input type="text" style="margin-bottom: 1em;" nbInput fullWidth status="basic">
+            <input type="text" nbInput status="basic"> €
+          </nb-list-item>
+          <nb-list-item>
+            <input type="text" style="margin-bottom: 1em;" nbInput fullWidth status="basic">
+            <input type="text" nbInput status="basic"> €
+          </nb-list-item>
+          <nb-list-item>
+            <input type="text" style="margin-bottom: 1em;" nbInput fullWidth status="basic">
+            <input type="text" nbInput status="basic"> €
+          </nb-list-item>
+          <nb-list-item>
+            <input type="text" style="margin-bottom: 1em;" nbInput fullWidth status="basic">
+            <input type="text" nbInput status="basic"> €
+          </nb-list-item>
+        </nb-list>
+      </nb-layout-column>
 
-          <nb-layout-column>
-            <nb-card>
-              <nb-card-body>
-                <nb-list>
-                  <nb-list-item><input type="text" nbInput fullWidth status="basic"
-                                       placeholder="Prima portata | categoria Pizze"></nb-list-item>
-                  <nb-list-item><input type="text" nbInput fullWidth status="basic"
-                                       placeholder="Seconda portata | categoria Pizze"></nb-list-item>
-                </nb-list>
-              </nb-card-body>
-            </nb-card>
-          </nb-layout-column>
+      <nb-layout-footer>
+        <button class="prev-button" style="margin-right: 1.5em" nbButton nbStepperPrevious>Indietro</button>
+        <button class="next-button" nbButton nbStepperNext>Avanti</button>
+      </nb-layout-footer>
+    </nb-layout>
+  </nb-step>
+  <nb-step label="Pizze">
+    <nb-layout center>
+      <nb-layout-header><h2>Pizze del giorno</h2></nb-layout-header>
 
-          <nb-layout-footer>
-            <button class="prev-button" style="margin-right: 1.5em" nbButton nbStepperPrevious>Indietro</button>
-            <button class="next-button" nbButton nbStepperNext>Avanti</button>
-          </nb-layout-footer>
-        </nb-layout>
-      </nb-step>
-      <nb-step label="Conferma">
-        <nb-layout center>
-          <nb-layout-header><h2>Conferma e salva</h2></nb-layout-header>
+      <nb-layout-column>
+        <nb-list>
+          <nb-list-item>
+            <input type="text" style="margin-bottom: 1em;" nbInput fullWidth status="basic">
+            <input type="text" nbInput status="basic"> €
+          </nb-list-item>
+          <nb-list-item>
+            <input type="text" style="margin-bottom: 1em;" nbInput fullWidth status="basic">
+            <input type="text" nbInput status="basic"> €
+          </nb-list-item>
+        </nb-list>
+      </nb-layout-column>
 
-          <nb-layout-column>
-            Hello World!
-          </nb-layout-column>
+      <nb-layout-footer>
+        <button class="prev-button" style="margin-right: 1.5em" nbButton nbStepperPrevious>Indietro</button>
+        <button class="next-button" nbButton nbStepperNext>Avanti</button>
+      </nb-layout-footer>
+    </nb-layout>
+  </nb-step>
+  <nb-step label="Conferma">
+    <nb-layout center>
+      <nb-layout-header><h2>Conferma e salva</h2></nb-layout-header>
 
-          <nb-layout-footer>
-            <button class="prev-button" style="margin-right: 1.5em" nbButton nbStepperPrevious>Indietro</button>
-            <button nbButton>Conferma</button>
-          </nb-layout-footer>
-        </nb-layout>
-      </nb-step>
-    </nb-stepper>
-  </nb-card-body>
-</nb-card>
+      <nb-layout-column>
+        <h4 style="margin-bottom: 1em;">Riepilogo</h4>
+        <nb-accordion>
+          <nb-accordion-item>
+            <nb-accordion-item-header>Primi del giorno</nb-accordion-item-header>
+            <nb-accordion-item-body>
+              <nb-list>
+                <nb-list-item>
+                  Test1
+                </nb-list-item>
+                <nb-list-item>
+                  Test2
+                </nb-list-item>
+              </nb-list>
+            </nb-accordion-item-body>
+          </nb-accordion-item>
+          <nb-accordion-item>
+            <nb-accordion-item-header>Secondi del giorno</nb-accordion-item-header>
+            <nb-accordion-item-body>
+              <nb-list>
+                <nb-list-item>
+                  Test1
+                </nb-list-item>
+                <nb-list-item>
+                  Test2
+                </nb-list-item>
+              </nb-list>
+            </nb-accordion-item-body>
+          </nb-accordion-item>
+          <nb-accordion-item>
+            <nb-accordion-item-header>Pizze del giorno</nb-accordion-item-header>
+            <nb-accordion-item-body>
+              <nb-list>
+                <nb-list-item>
+                  Test1
+                </nb-list-item>
+                <nb-list-item>
+                  Test2
+                </nb-list-item>
+              </nb-list>
+            </nb-accordion-item-body>
+          </nb-accordion-item>
+        </nb-accordion>
+      </nb-layout-column>
+
+      <nb-layout-footer>
+        <button class="prev-button" style="margin-right: 1.5em" nbButton nbStepperPrevious>Indietro</button>
+        <button nbButton>Conferma</button>
+      </nb-layout-footer>
+    </nb-layout>
+  </nb-step>
+</nb-stepper>
+<!-- </nb-card-body>
+</nb-card> -->

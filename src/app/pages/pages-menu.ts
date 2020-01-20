@@ -12,16 +12,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
     },
   },
   {
-    title: 'Menu',
-    icon: 'nb-menu',
-    hidden: true,
-    link: '/pages/tasks',
-    data: {
-      permission: 'view',
-      resource: 'admin',
-    },
-  },
-  {
     title: 'Menu del Giorno',
     icon: 'nb-person',
     link: '/pages/tasks',
