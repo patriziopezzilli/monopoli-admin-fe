@@ -16,6 +16,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {ThemeModule} from './@theme/theme.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AuthGuard} from './auth.guard';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import {AuthGuard} from './auth.guard';
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-
+    FormsModule,
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
     CoreModule.forRoot(),

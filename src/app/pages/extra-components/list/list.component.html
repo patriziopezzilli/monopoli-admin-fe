@@ -1,169 +1,211 @@
-<!--<nb-card>
-  <nb-card-body> -->
-<nb-stepper orientation="horizontal">
-  <nb-step label="Benvenuto">
-    <nb-layout>
-      <nb-layout-header><h2>Benvenuto</h2></nb-layout-header>
+<form name="menuDelGiornoForm">
+  <nb-stepper orientation="horizontal">
+    <nb-step label="Benvenuto">
+      <nb-layout>
+        <nb-layout-header><h2>Benvenuto</h2></nb-layout-header>
 
-      <nb-layout-column>
-        Ciao! Nella seguente sezione potrai creare il menù del giorno e confermarlo per la pubblicazione sul sito!
-        Prosegui nei vari step e vai avanti / indietro con i pulsanti in basso. Una volta sicuro/a del menù vai all'ultima pagina e premi conferma!
+        <nb-layout-column>
+          Ciao! Nella seguente sezione potrai creare il menù del giorno e confermarlo per la pubblicazione sul sito!
+          Prosegui nei vari step e vai avanti / indietro con i pulsanti in basso. Una volta sicuro/a del menù vai
+          all'ultima pagina e premi conferma!
 
-        Enjoy!
-      </nb-layout-column>
+          Enjoy!
+        </nb-layout-column>
 
-      <nb-layout-footer>
-        <button class="next-button" nbButton nbStepperNext>Avanti</button>
-      </nb-layout-footer>
-    </nb-layout>
-  </nb-step>
-  <nb-step label="Primi">
-    <nb-layout center>
-      <nb-layout-header><h2>Primi del giorno</h2></nb-layout-header>
+        <nb-layout-footer>
+          <button class="next-button" nbButton nbStepperNext>Avanti</button>
+        </nb-layout-footer>
+      </nb-layout>
+    </nb-step>
+    <nb-step label="Primi">
+      <nb-layout center>
+        <nb-layout-header><h2>Primi del giorno</h2></nb-layout-header>
 
-      <nb-layout-column>
-        <!-- <nb-card>
-          <nb-card-body> -->
-        <nb-list>
-          <nb-list-item>
-            <input type="text" style="margin-bottom: 1em;" nbInput fullWidth status="basic">
-            <input type="text" nbInput status="basic"> €
-          </nb-list-item>
-          <nb-list-item>
-            <input type="text" style="margin-bottom: 1em;" nbInput fullWidth status="basic">
-            <input type="text" nbInput status="basic"> €
-          </nb-list-item>
-          <nb-list-item>
-            <input type="text" style="margin-bottom: 1em;" nbInput fullWidth status="basic">
-            <input type="text" nbInput status="basic"> €
-          </nb-list-item>
-          <nb-list-item>
-            <input type="text" style="margin-bottom: 1em;" nbInput fullWidth status="basic">
-            <input type="text" nbInput status="basic"> €
-          </nb-list-item>
-          <nb-list-item>
-            <input type="text" style="margin-bottom: 1em;" nbInput fullWidth status="basic">
-            <input type="text" nbInput status="basic"> €
-          </nb-list-item>
-        </nb-list>
-        <!--  </nb-card-body>
-        </nb-card> -->
-      </nb-layout-column>
-      <nb-layout-footer>
-        <button class="prev-button" style="margin-right: 1.5em" nbButton nbStepperPrevious>Indietro</button>
-        <button class="next-button" nbButton nbStepperNext>Avanti</button>
-      </nb-layout-footer>
-    </nb-layout>
-  </nb-step>
-  <nb-step label="Secondi">
-    <nb-layout center>
-      <nb-layout-header><h2>Secondi del giorno</h2></nb-layout-header>
+        <nb-layout-column>
+          <!-- <nb-card>
+            <nb-card-body> -->
+          <nb-list>
+            <nb-list-item>
+              <input name="primo1" type="text" [(ngModel)]="primo1" (ngModelChange)="changePrimo1($event)"
+                     style="margin-bottom: 1em;" nbInput fullWidth status="basic">
+              <input name="primo1prezzo" type="text" [(ngModel)]="primo1prezzo"
+                     (ngModelChange)="changePrimo1Prezzo($event)" nbInput status="basic"> €
+            </nb-list-item>
+            <nb-list-item>
+              <input name="primo1" type="text" ngModel="{{primo2}}" (ngModelChange)="changePrimo2($event)"
+                     style="margin-bottom: 1em;" nbInput fullWidth status="basic">
+              <input name="primo2prezzo" type="text" ngModel="{{primo2prezzo}}"
+                     (ngModelChange)="changePrimo2Prezzo($event)" nbInput status="basic"> €
+            </nb-list-item>
+            <nb-list-item>
+              <input name="primo3" type="text" ngModel="{{primo3}}" (ngModelChange)="changePrimo3($event)"
+                     style="margin-bottom: 1em;" nbInput fullWidth status="basic">
+              <input name="primo3prezzo" type="text" ngModel="{{primo3prezzo}}"
+                     (ngModelChange)="changePrimo3Prezzo($event)" nbInput status="basic"> €
+            </nb-list-item>
+            <nb-list-item>
+              <input name="primo4" type="text" ngModel="{{primo4}}" (ngModelChange)="changePrimo4($event)"
+                     style="margin-bottom: 1em;" nbInput fullWidth status="basic">
+              <input name="primo4prezzo" type="text" ngModel="{{primo4prezzo}}"
+                     (ngModelChange)="changePrimo4Prezzo($event)" nbInput status="basic"> €
+            </nb-list-item>
+            <nb-list-item>
+              <input name="primo5" type="text" ngModel="{{primo5}}" style="margin-bottom: 1em;" nbInput
+                     (ngModelChange)="changePrimo5($event)" fullWidth status="basic">
+              <input name="primo5prezzo" type="text" ngModel="{{primo5prezzo}}"
+                     (ngModelChange)="changePrimo5Prezzo($event)" nbInput status="basic"> €
+            </nb-list-item>
+          </nb-list>
+          <!--  </nb-card-body>
+          </nb-card> -->
+        </nb-layout-column>
+        <nb-layout-footer>
+          <button class="prev-button" style="margin-right: 1.5em" nbButton nbStepperPrevious>Indietro</button>
+          <button class="next-button" nbButton nbStepperNext>Avanti</button>
+        </nb-layout-footer>
+      </nb-layout>
+    </nb-step>
+    <nb-step label="Secondi">
+      <nb-layout center>
+        <nb-layout-header><h2>Secondi del giorno</h2></nb-layout-header>
 
-      <nb-layout-column>
-        <nb-list>
-          <nb-list-item>
-            <input type="text" style="margin-bottom: 1em;" nbInput fullWidth status="basic">
-            <input type="text" nbInput status="basic"> €
-          </nb-list-item>
-          <nb-list-item>
-            <input type="text" style="margin-bottom: 1em;" nbInput fullWidth status="basic">
-            <input type="text" nbInput status="basic"> €
-          </nb-list-item>
-          <nb-list-item>
-            <input type="text" style="margin-bottom: 1em;" nbInput fullWidth status="basic">
-            <input type="text" nbInput status="basic"> €
-          </nb-list-item>
-          <nb-list-item>
-            <input type="text" style="margin-bottom: 1em;" nbInput fullWidth status="basic">
-            <input type="text" nbInput status="basic"> €
-          </nb-list-item>
-        </nb-list>
-      </nb-layout-column>
+        <nb-layout-column>
+          <nb-list>
+            <nb-list-item>
+              <input type="text" name="secondo1" ngModel="{{secondo1}}" (ngModelChange)="changeSecondo1($event)"
+                     style="margin-bottom: 1em;" nbInput fullWidth
+                     status="basic">
+              <input type="text" name="secondo1prezzo" ngModel="{{secondo1prezzo}}"
+                     (ngModelChange)="changeSecondo1Prezzo($event)" nbInput status="basic"> €
+            </nb-list-item>
+            <nb-list-item>
+              <input type="text" name="secondo2" ngModel="{{secondo2}}" (ngModelChange)="changeSecondo2($event)"
+                     style="margin-bottom: 1em;" nbInput fullWidth
+                     status="basic">
+              <input type="text" name="secondo2prezzo" ngModel="{{secondo2prezzo}}"
+                     (ngModelChange)="changeSecondo2Prezzo($event)" nbInput status="basic"> €
+            </nb-list-item>
+            <nb-list-item>
+              <input type="text" name="secondo3" ngModel="{{secondo3}}" (ngModelChange)="changeSecondo3($event)"
+                     style="margin-bottom: 1em;" nbInput fullWidth
+                     status="basic">
+              <input type="text" name="secondo3prezzo" ngModel="{{secondo3prezzo}}"
+                     (ngModelChange)="changeSecondo3Prezzo($event)" nbInput status="basic"> €
+            </nb-list-item>
+            <nb-list-item>
+              <input type="text" name="secondo4" ngModel="{{secondo4}}" (ngModelChange)="changeSecondo4($event)"
+                     style="margin-bottom: 1em;" nbInput fullWidth
+                     status="basic">
+              <input type="text" name="secondo4prezzo" ngModel="{{secondo4prezzo}}"
+                     (ngModelChange)="changeSecondo4Prezzo($event)" nbInput status="basic"> €
+            </nb-list-item>
+          </nb-list>
+        </nb-layout-column>
 
-      <nb-layout-footer>
-        <button class="prev-button" style="margin-right: 1.5em" nbButton nbStepperPrevious>Indietro</button>
-        <button class="next-button" nbButton nbStepperNext>Avanti</button>
-      </nb-layout-footer>
-    </nb-layout>
-  </nb-step>
-  <nb-step label="Pizze">
-    <nb-layout center>
-      <nb-layout-header><h2>Pizze del giorno</h2></nb-layout-header>
+        <nb-layout-footer>
+          <button class="prev-button" style="margin-right: 1.5em" nbButton nbStepperPrevious>Indietro</button>
+          <button class="next-button" nbButton nbStepperNext>Avanti</button>
+        </nb-layout-footer>
+      </nb-layout>
+    </nb-step>
+    <nb-step label="Pizze">
+      <nb-layout center>
+        <nb-layout-header><h2>Pizze del giorno</h2></nb-layout-header>
 
-      <nb-layout-column>
-        <nb-list>
-          <nb-list-item>
-            <input type="text" style="margin-bottom: 1em;" nbInput fullWidth status="basic">
-            <input type="text" nbInput status="basic"> €
-          </nb-list-item>
-          <nb-list-item>
-            <input type="text" style="margin-bottom: 1em;" nbInput fullWidth status="basic">
-            <input type="text" nbInput status="basic"> €
-          </nb-list-item>
-        </nb-list>
-      </nb-layout-column>
+        <nb-layout-column>
+          <nb-list>
+            <nb-list-item>
+              <input type="text" ngModel="{{pizza1}}" (ngModelChange)="changePizza1($event)"
+                     style="margin-bottom: 1em;" nbInput fullWidth
+                     status="basic">
+              <input type="text" ngModel="{{pizza1prezzo}}" (ngModelChange)="changePizza1Prezzo($event)"
+                     nbInput status="basic"> €
+            </nb-list-item>
+            <nb-list-item>
+              <input type="text" ngModel="{{pizza2}}" (ngModelChange)="changePizza2($event)"
+                     style="margin-bottom: 1em;" nbInput fullWidth
+                     status="basic">
+              <input type="text" ngModel="{{pizza2prezzo}}" (ngModelChange)="changePizza2Prezzo($event)"
+                     nbInput status="basic"> €
+            </nb-list-item>
+          </nb-list>
+        </nb-layout-column>
 
-      <nb-layout-footer>
-        <button class="prev-button" style="margin-right: 1.5em" nbButton nbStepperPrevious>Indietro</button>
-        <button class="next-button" nbButton nbStepperNext>Avanti</button>
-      </nb-layout-footer>
-    </nb-layout>
-  </nb-step>
-  <nb-step label="Conferma">
-    <nb-layout center>
-      <nb-layout-header><h2>Conferma e salva</h2></nb-layout-header>
+        <nb-layout-footer>
+          <button class="prev-button" style="margin-right: 1.5em" nbButton nbStepperPrevious>Indietro</button>
+          <button class="next-button" nbButton nbStepperNext>Avanti</button>
+        </nb-layout-footer>
+      </nb-layout>
+    </nb-step>
+    <nb-step label="Conferma">
+      <nb-layout center>
+        <nb-layout-header><h2>Conferma e salva</h2></nb-layout-header>
 
-      <nb-layout-column>
-        <h4 style="margin-bottom: 1em;">Riepilogo</h4>
-        <nb-accordion>
-          <nb-accordion-item>
-            <nb-accordion-item-header>Primi del giorno</nb-accordion-item-header>
-            <nb-accordion-item-body>
-              <nb-list>
-                <nb-list-item>
-                  Test1
-                </nb-list-item>
-                <nb-list-item>
-                  Test2
-                </nb-list-item>
-              </nb-list>
-            </nb-accordion-item-body>
-          </nb-accordion-item>
-          <nb-accordion-item>
-            <nb-accordion-item-header>Secondi del giorno</nb-accordion-item-header>
-            <nb-accordion-item-body>
-              <nb-list>
-                <nb-list-item>
-                  Test1
-                </nb-list-item>
-                <nb-list-item>
-                  Test2
-                </nb-list-item>
-              </nb-list>
-            </nb-accordion-item-body>
-          </nb-accordion-item>
-          <nb-accordion-item>
-            <nb-accordion-item-header>Pizze del giorno</nb-accordion-item-header>
-            <nb-accordion-item-body>
-              <nb-list>
-                <nb-list-item>
-                  Test1
-                </nb-list-item>
-                <nb-list-item>
-                  Test2
-                </nb-list-item>
-              </nb-list>
-            </nb-accordion-item-body>
-          </nb-accordion-item>
-        </nb-accordion>
-      </nb-layout-column>
+        <nb-layout-column>
+          <h4 style="margin-bottom: 1em;">Riepilogo</h4>
+          <nb-accordion>
+            <nb-accordion-item>
+              <nb-accordion-item-header>Primi del giorno</nb-accordion-item-header>
+              <nb-accordion-item-body>
+                <nb-list>
+                  <nb-list-item *ngIf="primo1 != null && primo1 != ''">
+                    {{primo1}} {{primo1prezzo}}€
+                  </nb-list-item>
+                  <nb-list-item *ngIf="primo2 != null && primo2 != ''">
+                    {{primo2}} {{primo2prezzo}}€
+                  </nb-list-item>
+                  <nb-list-item *ngIf="primo3 != null && primo3 != ''">
+                    {{primo3}} {{primo3prezzo}}€
+                  </nb-list-item>
+                  <nb-list-item *ngIf="primo4 != null && primo4 != ''">
+                    {{primo4}} {{primo4prezzo}}€
+                  </nb-list-item>
+                  <nb-list-item *ngIf="primo5 != null && primo5 != ''">
+                    {{primo5}} {{primo5prezzo}}€
+                  </nb-list-item>
+                </nb-list>
+              </nb-accordion-item-body>
+            </nb-accordion-item>
+            <nb-accordion-item>
+              <nb-accordion-item-header>Secondi del giorno</nb-accordion-item-header>
+              <nb-accordion-item-body>
+                <nb-list>
+                  <nb-list-item *ngIf="secondo1 != null && secondo1 != ''">
+                    {{secondo1}} {{secondo1prezzo}}€
+                  </nb-list-item>
+                  <nb-list-item *ngIf="secondo2 != null && secondo2 != ''">
+                    {{secondo2}} {{secondo2prezzo}}€
+                  </nb-list-item>
+                  <nb-list-item *ngIf="secondo3 != null && secondo3 != ''">
+                    {{secondo3}} {{secondo3prezzo}}€
+                  </nb-list-item>
+                  <nb-list-item *ngIf="secondo4 != null && secondo4 != ''">
+                    {{secondo4}} {{secondo4prezzo}}€
+                  </nb-list-item>
+                </nb-list>
+              </nb-accordion-item-body>
+            </nb-accordion-item>
+            <nb-accordion-item>
+              <nb-accordion-item-header>Pizze del giorno</nb-accordion-item-header>
+              <nb-accordion-item-body>
+                <nb-list>
+                  <nb-list-item *ngIf="pizza1 != null && pizza1 != ''">
+                    {{pizza1}} {{pizza1prezzo}}€
+                  </nb-list-item>
+                  <nb-list-item *ngIf="pizza2 != null && pizza2prezzo != ''">
+                    {{pizza2}} {{pizza2prezzo}}€
+                  </nb-list-item>
+                </nb-list>
+              </nb-accordion-item-body>
+            </nb-accordion-item>
+          </nb-accordion>
+        </nb-layout-column>
 
-      <nb-layout-footer>
-        <button class="prev-button" style="margin-right: 1.5em" nbButton nbStepperPrevious>Indietro</button>
-        <button nbButton>Conferma</button>
-      </nb-layout-footer>
-    </nb-layout>
-  </nb-step>
-</nb-stepper>
-<!-- </nb-card-body>
-</nb-card> -->
+        <nb-layout-footer>
+          <button class="prev-button" style="margin-right: 1.5em" nbButton nbStepperPrevious>Indietro</button>
+          <button type="submit" (click)="confermaMenu();" nbButton>Conferma</button>
+        </nb-layout-footer>
+      </nb-layout>
+    </nb-step>
+  </nb-stepper>
+</form>

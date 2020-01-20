@@ -1,56 +1,57 @@
-<div class="lists row">
-  <div class="col-md-12 col-lg-12 col-xxxl-12" style="text-align:center;">
-    <nb-card size="xsmall">
-      <nb-card-header>Menù del Giorno</nb-card-header>
+<form>
+  <div class="lists row">
+    <div class="col-md-12 col-lg-12 col-xxxl-12" style="text-align:center;">
+      <nb-card size="xsmall">
+        <nb-card-header>Menù del Giorno</nb-card-header>
 
-      <nb-card-body>
+        <nb-card-body>
+          <nb-list>
+            <nb-list-item>
+              <button (click)="inviaStampa()" type="button" fullWidth nbButton>Invia in stampa</button>
+            </nb-list-item>
+            <nb-list-item>
+              <button (click)="inviaMail()" type="button" fullWidth nbButton>Invia ai clienti</button>
+            </nb-list-item>
+          </nb-list>
+        </nb-card-body>
+
+      </nb-card>
+    </div>
+  </div>
+
+  <div class="lists row">
+    <div class="col-md-12 col-lg-6 col-xxxl-6">
+      <nb-card class="list-card" size="small">
+        <nb-card-header>Primi</nb-card-header>
         <nb-list>
-          <nb-list-item>
-            <button (click)="inviaStampa()" type="button" fullWidth nbButton>Invia in stampa</button>
-          </nb-list-item>
-          <nb-list-item>
-            <button (click)="inviaMail()" type="button" fullWidth nbButton>Invia ai clienti</button>
+          <nb-list-item *ngFor="let primo of primi">
+            <nb-user [name]="primo.nome" [title]="primo.prezzo">
+            </nb-user>
           </nb-list-item>
         </nb-list>
-      </nb-card-body>
-
-    </nb-card>
+      </nb-card>
+    </div>
+    <div class="col-md-12 col-lg-6 col-xxxl-6">
+      <nb-card class="list-card" size="small">
+        <nb-card-header>Secondi</nb-card-header>
+        <nb-list>
+          <nb-list-item *ngFor="let secondo of secondi">
+            <nb-user [name]="secondo.nome" [title]="secondo.prezzo">
+            </nb-user>
+          </nb-list-item>
+        </nb-list>
+      </nb-card>
+    </div>
+    <div class="col-md-12 col-lg-12 col-xxxl-12">
+      <nb-card class="list-card" size="small">
+        <nb-card-header>Pizze</nb-card-header>
+        <nb-list>
+          <nb-list-item *ngFor="let pizza of pizze">
+            <nb-user [name]="pizza.nome" [title]="pizza.prezzo">
+            </nb-user>
+          </nb-list-item>
+        </nb-list>
+      </nb-card>
+    </div>
   </div>
-</div>
-
-<div class="lists row">
-  <div class="col-md-12 col-lg-6 col-xxxl-6">
-    <nb-card class="list-card" size="small">
-      <nb-card-header>Primi</nb-card-header>
-      <nb-list>
-        <nb-list-item *ngFor="let primo of primi">
-          <nb-user [name]="primo.nome" [title]="primo.prezzo">
-          </nb-user>
-        </nb-list-item>
-      </nb-list>
-    </nb-card>
-  </div>
-  <div class="col-md-12 col-lg-6 col-xxxl-6">
-    <nb-card class="list-card" size="small">
-      <nb-card-header>Secondi</nb-card-header>
-      <nb-list>
-        <nb-list-item *ngFor="let secondo of secondi">
-          <nb-user [name]="secondo.nome" [title]="secondo.prezzo">
-          </nb-user>
-        </nb-list-item>
-      </nb-list>
-    </nb-card>
-  </div>
-  <div class="col-md-12 col-lg-12 col-xxxl-12">
-    <nb-card class="list-card" size="small">
-      <nb-card-header>Pizze</nb-card-header>
-      <nb-list>
-        <nb-list-item *ngFor="let pizza of pizze">
-          <nb-user [name]="pizza.nome" [title]="pizza.prezzo">
-          </nb-user>
-        </nb-list-item>
-      </nb-list>
-    </nb-card>
-  </div>
-</div>
-
+</form>
