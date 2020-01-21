@@ -32,27 +32,27 @@
                      (ngModelChange)="changePrimo1Prezzo($event)" nbInput status="basic"> €
             </nb-list-item>
             <nb-list-item>
-              <input name="primo1" type="text" ngModel="{{primo2}}" (ngModelChange)="changePrimo2($event)"
+              <input name="primo1" type="text" [(ngModel)]="primo2" (ngModelChange)="changePrimo2($event)"
                      style="margin-bottom: 1em;" nbInput fullWidth status="basic">
-              <input name="primo2prezzo" type="text" ngModel="{{primo2prezzo}}"
+              <input name="primo2prezzo" type="text" [(ngModel)]="primo2prezzo"
                      (ngModelChange)="changePrimo2Prezzo($event)" nbInput status="basic"> €
             </nb-list-item>
             <nb-list-item>
-              <input name="primo3" type="text" ngModel="{{primo3}}" (ngModelChange)="changePrimo3($event)"
+              <input name="primo3" type="text" [(ngModel)]="primo3" (ngModelChange)="changePrimo3($event)"
                      style="margin-bottom: 1em;" nbInput fullWidth status="basic">
-              <input name="primo3prezzo" type="text" ngModel="{{primo3prezzo}}"
+              <input name="primo3prezzo" type="text" [(ngModel)]="primo3prezzo"
                      (ngModelChange)="changePrimo3Prezzo($event)" nbInput status="basic"> €
             </nb-list-item>
             <nb-list-item>
-              <input name="primo4" type="text" ngModel="{{primo4}}" (ngModelChange)="changePrimo4($event)"
+              <input name="primo4" type="text" [(ngModel)]="primo4" (ngModelChange)="changePrimo4($event)"
                      style="margin-bottom: 1em;" nbInput fullWidth status="basic">
-              <input name="primo4prezzo" type="text" ngModel="{{primo4prezzo}}"
+              <input name="primo4prezzo" type="text" [(ngModel)]="primo4prezzo"
                      (ngModelChange)="changePrimo4Prezzo($event)" nbInput status="basic"> €
             </nb-list-item>
             <nb-list-item>
-              <input name="primo5" type="text" ngModel="{{primo5}}" style="margin-bottom: 1em;" nbInput
+              <input name="primo5" type="text" [(ngModel)]="primo5" style="margin-bottom: 1em;" nbInput
                      (ngModelChange)="changePrimo5($event)" fullWidth status="basic">
-              <input name="primo5prezzo" type="text" ngModel="{{primo5prezzo}}"
+              <input name="primo5prezzo" type="text" [(ngModel)]="primo5prezzo"
                      (ngModelChange)="changePrimo5Prezzo($event)" nbInput status="basic"> €
             </nb-list-item>
           </nb-list>
@@ -72,31 +72,31 @@
         <nb-layout-column>
           <nb-list>
             <nb-list-item>
-              <input type="text" name="secondo1" ngModel="{{secondo1}}" (ngModelChange)="changeSecondo1($event)"
+              <input type="text" name="secondo1" [(ngModel)]="secondo1" (ngModelChange)="changeSecondo1($event)"
                      style="margin-bottom: 1em;" nbInput fullWidth
                      status="basic">
-              <input type="text" name="secondo1prezzo" ngModel="{{secondo1prezzo}}"
+              <input type="text" name="secondo1prezzo" [(ngModel)]="secondo1prezzo"
                      (ngModelChange)="changeSecondo1Prezzo($event)" nbInput status="basic"> €
             </nb-list-item>
             <nb-list-item>
-              <input type="text" name="secondo2" ngModel="{{secondo2}}" (ngModelChange)="changeSecondo2($event)"
+              <input type="text" name="secondo2" [(ngModel)]="secondo2" (ngModelChange)="changeSecondo2($event)"
                      style="margin-bottom: 1em;" nbInput fullWidth
                      status="basic">
-              <input type="text" name="secondo2prezzo" ngModel="{{secondo2prezzo}}"
+              <input type="text" name="secondo2prezzo" [(ngModel)]="secondo2prezzo"
                      (ngModelChange)="changeSecondo2Prezzo($event)" nbInput status="basic"> €
             </nb-list-item>
             <nb-list-item>
-              <input type="text" name="secondo3" ngModel="{{secondo3}}" (ngModelChange)="changeSecondo3($event)"
+              <input type="text" name="secondo3" [(ngModel)]="secondo3" (ngModelChange)="changeSecondo3($event)"
                      style="margin-bottom: 1em;" nbInput fullWidth
                      status="basic">
-              <input type="text" name="secondo3prezzo" ngModel="{{secondo3prezzo}}"
+              <input type="text" name="secondo3prezzo" [(ngModel)]="secondo3prezzo"
                      (ngModelChange)="changeSecondo3Prezzo($event)" nbInput status="basic"> €
             </nb-list-item>
             <nb-list-item>
-              <input type="text" name="secondo4" ngModel="{{secondo4}}" (ngModelChange)="changeSecondo4($event)"
+              <input type="text" name="secondo4" [(ngModel)]="secondo4" (ngModelChange)="changeSecondo4($event)"
                      style="margin-bottom: 1em;" nbInput fullWidth
                      status="basic">
-              <input type="text" name="secondo4prezzo" ngModel="{{secondo4prezzo}}"
+              <input type="text" name="secondo4prezzo" [(ngModel)]="secondo4prezzo"
                      (ngModelChange)="changeSecondo4Prezzo($event)" nbInput status="basic"> €
             </nb-list-item>
           </nb-list>
@@ -115,17 +115,17 @@
         <nb-layout-column>
           <nb-list>
             <nb-list-item>
-              <input type="text" ngModel="{{pizza1}}" (ngModelChange)="changePizza1($event)"
+              <input type="text" [(ngModel)]="pizza1" (ngModelChange)="changePizza1($event)"
                      style="margin-bottom: 1em;" nbInput fullWidth
                      status="basic">
-              <input type="text" ngModel="{{pizza1prezzo}}" (ngModelChange)="changePizza1Prezzo($event)"
+              <input type="text" [(ngModel)]="pizza1prezzo" (ngModelChange)="changePizza1Prezzo($event)"
                      nbInput status="basic"> €
             </nb-list-item>
             <nb-list-item>
-              <input type="text" ngModel="{{pizza2}}" (ngModelChange)="changePizza2($event)"
+              <input type="text" [(ngModel)]="pizza2" (ngModelChange)="changePizza2($event)"
                      style="margin-bottom: 1em;" nbInput fullWidth
                      status="basic">
-              <input type="text" ngModel="{{pizza2prezzo}}" (ngModelChange)="changePizza2Prezzo($event)"
+              <input type="text" [(ngModel)]="pizza2prezzo" (ngModelChange)="changePizza2Prezzo($event)"
                      nbInput status="basic"> €
             </nb-list-item>
           </nb-list>

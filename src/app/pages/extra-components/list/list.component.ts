@@ -71,11 +71,11 @@ export class ListComponent {
   }
 
   changePrimo4(primo: string) {
-    this.primo1 = primo;
+    this.primo4 = primo;
   }
 
   changePrimo4Prezzo(primo: string) {
-    this.primo1prezzo = primo;
+    this.primo4prezzo = primo;
   }
 
   changePrimo5(primo: string) {
