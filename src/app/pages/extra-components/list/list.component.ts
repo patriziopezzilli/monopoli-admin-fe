@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {Configuration} from '../../../app.component';
 import {MenuDelGiornoSaveRequest, Pasto} from '../../../@core/data/stats-progress-bar';
@@ -194,7 +193,14 @@ export class ListComponent {
     this.post(postRequest);
   }
 
-  public post(data: MenuDelGiornoSaveRequest): Observable<any> {
-    return this.http.post(Configuration.server + '/menudelgiorno', data);
+  public post(data: MenuDelGiornoSaveRequest) {
+    this.http.post(Configuration.server + '/menudelgiorno', data).subscribe({
+      complete: function () {
+        console.log('> server return OK');
+      }, error: function (p1: any) {
+        console.log('> server return ERROR');
+      }, next() {
+      },
+    });
   }
 }

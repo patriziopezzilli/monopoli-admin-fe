@@ -36,13 +36,27 @@ export class CalendarKitFullCalendarShowcaseComponent {
   public inviaMail() {
     console.log('> invia mail..');
 
-    this.http.get<any>(Configuration.server + '/menudelgiorno/mail');
+    this.http.get<any>(Configuration.server + '/menudelgiorno/mail').subscribe({
+      complete: function () {
+        console.log('> server return OK');
+      }, error: function (p1: any) {
+        console.log('> server return ERROR');
+      }, next() {
+      },
+    });
   }
 
   public inviaStampa() {
     console.log('> invia in stampa..');
 
-    this.http.get<any>(Configuration.server + '/menudelgiorno/stampa');
+    this.http.get<any>(Configuration.server + '/menudelgiorno/stampa').subscribe({
+      complete: function () {
+        console.log('> server return OK');
+      }, error: function (p1: any) {
+        console.log('> server return ERROR');
+      }, next() {
+      },
+    });
   }
 
   getPrimi(): Observable<Pasto[]> {
