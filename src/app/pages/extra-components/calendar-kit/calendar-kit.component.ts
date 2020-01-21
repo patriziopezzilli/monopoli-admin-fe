@@ -36,13 +36,13 @@ export class CalendarKitFullCalendarShowcaseComponent {
   public inviaMail() {
     console.log('> invia mail..');
 
-    this.http.get<Pasto[]>(Configuration.server + '/menudelgiorno/mail');
+    this.http.get<any>(Configuration.server + '/menudelgiorno/mail');
   }
 
   public inviaStampa() {
     console.log('> invia in stampa..');
 
-    this.http.get<Pasto[]>(Configuration.server + '/menudelgiorno/stampa');
+    this.http.get<any>(Configuration.server + '/menudelgiorno/stampa');
   }
 
   getPrimi(): Observable<Pasto[]> {

@@ -1,4 +1,5 @@
 import {Observable} from 'rxjs';
+import {OnInit} from '@angular/core';
 
 export class ProgressInfo {
   constructor(
@@ -14,6 +15,18 @@ export class Sottoscritto {
   constructor(
     public mail: string,
   ) {
+  }
+}
+
+export class MenuDelGiornoSaveRequest implements OnInit {
+  public primi: Array<Pasto> = [];
+  public secondi: Array<Pasto> = [];
+  public pizze: Array<Pasto> = [];
+
+  constructor() {
+  }
+
+  ngOnInit(): void {
   }
 }
 
