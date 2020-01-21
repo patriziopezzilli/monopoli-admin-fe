@@ -197,6 +197,8 @@ export class ListComponent {
     this.http.post(Configuration.server + '/menudelgiorno', data).subscribe({
       complete: function () {
         console.log('> server return OK');
+
+        this.router.navigateByUrl('/pages/extra-components/calendar-kit');
       }, error: function (p1: any) {
         console.log('> server return ERROR');
       }, next() {

@@ -115,17 +115,17 @@
         <nb-layout-column>
           <nb-list>
             <nb-list-item>
-              <input type="text" [(ngModel)]="pizza1" (ngModelChange)="changePizza1($event)"
+              <input type="text" name="pizza1" [(ngModel)]="pizza1" (ngModelChange)="changePizza1($event)"
                      style="margin-bottom: 1em;" nbInput fullWidth
                      status="basic">
-              <input type="text" [(ngModel)]="pizza1prezzo" (ngModelChange)="changePizza1Prezzo($event)"
+              <input type="text" name="pizza1prezzo" [(ngModel)]="pizza1prezzo" (ngModelChange)="changePizza1Prezzo($event)"
                      nbInput status="basic"> €
             </nb-list-item>
             <nb-list-item>
-              <input type="text" [(ngModel)]="pizza2" (ngModelChange)="changePizza2($event)"
+              <input type="text" name="pizza2" [(ngModel)]="pizza2" (ngModelChange)="changePizza2($event)"
                      style="margin-bottom: 1em;" nbInput fullWidth
                      status="basic">
-              <input type="text" [(ngModel)]="pizza2prezzo" (ngModelChange)="changePizza2Prezzo($event)"
+              <input type="text" name="pizza2prezzo" [(ngModel)]="pizza2prezzo" (ngModelChange)="changePizza2Prezzo($event)"
                      nbInput status="basic"> €
             </nb-list-item>
           </nb-list>
