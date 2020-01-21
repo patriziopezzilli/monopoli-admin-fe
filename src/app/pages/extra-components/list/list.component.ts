@@ -1,14 +1,15 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Configuration} from '../../../app.component';
 import {MenuDelGiornoSaveRequest, Pasto} from '../../../@core/data/stats-progress-bar';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'ngx-list',
   templateUrl: 'list.component.html',
   styleUrls: ['list.component.scss'],
 })
-export class ListComponent {
+export class ListComponent implements OnInit {
 
   /**
    * Variables
@@ -37,7 +38,7 @@ export class ListComponent {
   pizza2: string = '';
   pizza2prezzo: string = '';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
 
   }
 
@@ -199,12 +200,13 @@ export class ListComponent {
     this.http.post(Configuration.server + '/menudelgiorno', data).subscribe({
       complete: function () {
         console.log('> server return OK');
-
-        this.router.navigate('/pages/extra-components/calendar-kit');
       }, error: function (p1: any) {
         console.log('> server return ERROR');
       }, next() {
       },
     });
+  }
+
+  ngOnInit(): void {
   }
 }
