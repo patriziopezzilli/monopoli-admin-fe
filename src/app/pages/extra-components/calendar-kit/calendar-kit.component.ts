@@ -34,29 +34,33 @@ export class CalendarKitFullCalendarShowcaseComponent {
   }
 
   public inviaMail() {
-    console.log('> invia mail..');
+    if (confirm("Sei sicuro di voler inviare la mail ai clienti?")) {
+      console.log('> invia mail..');
 
-    this.http.get<any>(Configuration.server + '/menudelgiorno/mail').subscribe({
-      complete: function () {
-        console.log('> server return OK');
-      }, error: function (p1: any) {
-        console.log('> server return ERROR');
-      }, next() {
-      },
-    });
+      this.http.get<any>(Configuration.server + '/menudelgiorno/mail').subscribe({
+        complete: function () {
+          console.log('> server return OK');
+        }, error: function (p1: any) {
+          console.log('> server return ERROR');
+        }, next() {
+        },
+      });
+    }
   }
 
   public inviaStampa() {
-    console.log('> invia in stampa..');
+    if (confirm("Sei sicuro di voler inviare il menu in stampa?")) {
+      console.log('> invia in stampa..');
 
-    this.http.get<any>(Configuration.server + '/menudelgiorno/stampa').subscribe({
-      complete: function () {
-        console.log('> server return OK');
-      }, error: function (p1: any) {
-        console.log('> server return ERROR');
-      }, next() {
-      },
-    });
+      this.http.get<any>(Configuration.server + '/menudelgiorno/stampa').subscribe({
+        complete: function () {
+          console.log('> server return OK');
+        }, error: function (p1: any) {
+          console.log('> server return ERROR');
+        }, next() {
+        },
+      });
+    }
   }
 
   getPrimi(): Observable<Pasto[]> {
