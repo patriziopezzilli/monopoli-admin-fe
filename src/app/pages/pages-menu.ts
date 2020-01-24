@@ -4,7 +4,30 @@ export const MENU_ITEMS: NbMenuItem[] = [
 
   {
     title: 'Dashboard',
-    icon: 'nb-home',
+    link: '/pages/dashboard',
+    data: {
+      permission: 'view',
+      resource: 'admin',
+    },
+  },
+  {
+    title: 'Descrizione sito',
+    link: '/pages/dashboard',
+    data: {
+      permission: 'view',
+      resource: 'admin',
+    },
+  },
+  {
+    title: 'Gestione Recensioni',
+    link: '/pages/dashboard',
+    data: {
+      permission: 'view',
+      resource: 'admin',
+    },
+  },
+  {
+    title: 'Menu',
     link: '/pages/dashboard',
     data: {
       permission: 'view',
@@ -13,7 +36,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Menu del Giorno',
-    icon: 'nb-person',
     link: '/pages/tasks',
     data: {
       permission: 'view',
