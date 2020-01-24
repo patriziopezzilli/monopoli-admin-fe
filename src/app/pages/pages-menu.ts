@@ -13,7 +13,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Descrizione sito',
-    link: '/pages/dashboard',
+    link: '/pages/extra-components/form-inputs',
     icon: 'nb-title',
     data: {
       permission: 'view',
@@ -22,7 +22,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Gestione Recensioni',
-    link: '/pages/dashboard',
+    link: '/pages/extra-components/accordion',
     icon: 'nb-person',
     data: {
       permission: 'view',
@@ -31,7 +31,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Menu',
-    link: '/pages/dashboard',
+    link: '/pages/extra-components/alert',
     icon: 'nb-menu',
     data: {
       permission: 'view',
