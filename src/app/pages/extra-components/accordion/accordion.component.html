@@ -1,23 +1,37 @@
-<div class="row">
-  <div class="col-md-12 col-lg-12 col-xxxl-12">
-    <nb-card>
-      <nb-card-header>Recensioni TripAdvisor</nb-card-header>
-      <nb-card-body>
-        <nb-tabset>
-          <nb-tab tabTitle="Recensione 1">
-            <textarea style="margin-bottom: 1.5em;" nbInput fullWidth placeholder="Textarea"></textarea>
-            <button nbButton>Salva</button>
-          </nb-tab>
-          <nb-tab tabTitle="Recensione 2">
-            <textarea style="margin-bottom: 1.5em;" nbInput fullWidth placeholder="Textarea"></textarea>
-            <button nbButton>Salva</button>
-          </nb-tab>
-          <nb-tab tabTitle="Recensione 3">
-            <textarea style="margin-bottom: 1.5em;" nbInput fullWidth placeholder="Textarea"></textarea>
-            <button nbButton>Salva</button>
-          </nb-tab>
-        </nb-tabset>
-      </nb-card-body>
-    </nb-card>
+<form>
+  <div class="row">
+    <div class="col-md-12 col-lg-12 col-xxxl-12">
+      <nb-card>
+        <nb-card-header>Recensioni TripAdvisor</nb-card-header>
+        <nb-card-body>
+          <nb-tabset>
+            <nb-tab tabTitle="Recensione 1">
+            <textarea name="recensione1" [(ngModel)]="recensione1" (ngModelChange)="changeRecensione1($event)"
+                      style="margin-top:1.5em; margin-bottom: 0.5em;" nbInput fullWidth
+                      placeholder="Contenuto della recensione"></textarea>
+              <input name="autore1" [(ngModel)]="autore1" (ngModelChange)="changeAutore1($event)"
+                     style="margin-bottom: 1.5em;" type="text" nbInput fullWidth placeholder="Autore della recensione">
+              <button (click)="confermaRecensioneUno();" nbButton>Salva</button>
+            </nb-tab>
+            <nb-tab tabTitle="Recensione 2">
+            <textarea name="recensione2" [(ngModel)]="recensione2" (ngModelChange)="changeRecensione2($event)"
+                      style="margin-top:1.5em; margin-bottom: 0.5em;" nbInput fullWidth
+                      placeholder="Contenuto della recensione"></textarea>
+              <input name="autore2" [(ngModel)]="autore2" (ngModelChange)="changeAutore2($event)"
+                     style="margin-bottom: 1.5em;" type="text" nbInput fullWidth placeholder="Autore della recensione">
+              <button (click)="confermaRecensioneDue();" nbButton>Salva</button>
+            </nb-tab>
+            <nb-tab tabTitle="Recensione 3">
+            <textarea name="recensione3" [(ngModel)]="recensione3" (ngModelChange)="changeRecensione3($event)"
+                      style="margin-top:1.5em; margin-bottom: 0.5em;" nbInput fullWidth
+                      placeholder="Contenuto della recensione"></textarea>
+              <input name="autore3" [(ngModel)]="autore3" (ngModelChange)="changeAutore3($event)"
+                     style="margin-bottom: 1.5em;" type="text" nbInput fullWidth placeholder="Autore della recensione">
+              <button (click)="confermaRecensioneTre();" nbButton>Salva</button>
+            </nb-tab>
+          </nb-tabset>
+        </nb-card-body>
+      </nb-card>
+    </div>
   </div>
-</div>
+</form>

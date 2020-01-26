@@ -18,6 +18,22 @@ export class Sottoscritto {
   }
 }
 
+export class Config {
+  constructor(
+    public name: string,
+    public value: string,
+  ) {
+  }
+}
+
+export class Recensione {
+  constructor(
+    public contenuto: string,
+    public autore: string,
+  ) {
+  }
+}
+
 export class MenuDelGiornoSaveRequest implements OnInit {
   public primi: Array<Pasto> = [];
   public secondi: Array<Pasto> = [];

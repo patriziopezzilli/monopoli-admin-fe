@@ -139,7 +139,7 @@ export class ListComponent implements OnInit {
    * Business logic
    */
   confermaMenu() {
-    if (confirm("Sei sicuro di voler salvare il menu del giorno?")) {
+    if (confirm('Sei sicuro di voler salvare il menu del giorno?')) {
       console.log('> conferma menu..');
       const postRequest = new MenuDelGiornoSaveRequest();
 

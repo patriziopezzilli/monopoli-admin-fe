@@ -37,3 +37,19 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 button {
   background-color: #039e58 !important;
 }
+
+.progress-value {
+  background: #039e58 !important;
+}
+
+nb-menu .menu-item a.active::before {
+  background: #039e58 !important;
+}
+
+.nb-theme-default nb-menu .menu-item > .menu-items > .menu-item a.active {
+  border-color: #039e58 !important;
+}
+
+.nb-theme-default nb-tabset .tabset .tab a::before {
+  background: #039e58 !important;
+}
