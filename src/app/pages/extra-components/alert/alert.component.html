@@ -24,24 +24,68 @@
           <nb-tab tabTitle="Primi e secondi">
             <nb-list>
               <nb-list-item *ngFor="let primo of primiesecondi">
+                <nb-card>
+                  <nb-card-header>
+                    {{primo.nome}}
+                  </nb-card-header>
+                  <nb-card-body>
+                    {{primo.descrizione}}
+                  </nb-card-body>
+                  <nb-card-footer>
+                    {{primo.prezzo}}
+                  </nb-card-footer>
+                </nb-card>
               </nb-list-item>
             </nb-list>
           </nb-tab>
           <nb-tab tabTitle="Contorni">
             <nb-list>
               <nb-list-item *ngFor="let contorno of contorni">
+                <nb-card>
+                  <nb-card-header>
+                    {{contorno.nome}}
+                  </nb-card-header>
+                  <nb-card-body>
+                    {{contorno.descrizione}}
+                  </nb-card-body>
+                  <nb-card-footer>
+                    {{contorno.prezzo}}
+                  </nb-card-footer>
+                </nb-card>
               </nb-list-item>
             </nb-list>
           </nb-tab>
           <nb-tab tabTitle="Pizze">
             <nb-list>
               <nb-list-item *ngFor="let pizza of pizze">
+                <nb-card>
+                  <nb-card-header>
+                    {{pizza.nome}}
+                  </nb-card-header>
+                  <nb-card-body>
+                    {{pizza.descrizione}}
+                  </nb-card-body>
+                  <nb-card-footer>
+                    {{pizza.prezzo}}
+                  </nb-card-footer>
+                </nb-card>
               </nb-list-item>
             </nb-list>
           </nb-tab>
           <nb-tab tabTitle="Dolci e Dessert">
             <nb-list>
               <nb-list-item *ngFor="let dolce of dessert">
+                <nb-card>
+                  <nb-card-header>
+                    {{dolce.nome}}
+                  </nb-card-header>
+                  <nb-card-body>
+                    {{dolce.descrizione}}
+                  </nb-card-body>
+                  <nb-card-footer>
+                    {{dolce.prezzo}}
+                  </nb-card-footer>
+                </nb-card>
               </nb-list-item>
             </nb-list>
           </nb-tab>

@@ -36,7 +36,7 @@ import { CalendarKitMonthCellComponent } from './calendar-kit/month-cell/month-c
 
 // service
 import { NewsService } from './services/news.service';
-import {NbStepperModule} from '@nebular/theme';
+import {NbBadgeModule, NbStepperModule} from '@nebular/theme';
 
 const COMPONENTS = [
   ExtraComponentsComponent,
@@ -80,9 +80,10 @@ const MODULES = [
 ];
 
 @NgModule({
-  imports: [
-    ...MODULES,
-  ],
+    imports: [
+        ...MODULES,
+        NbBadgeModule,
+    ],
   declarations: [
     ...COMPONENTS,
   ],
