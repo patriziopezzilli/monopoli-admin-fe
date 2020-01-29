@@ -53,3 +53,7 @@ nb-menu .menu-item a.active::before {
 .nb-theme-default nb-tabset .tabset .tab a::before {
   background: #039e58 !important;
 }
+
+#toast-container > div {
+  opacity:1 !important;
+}
