@@ -30,6 +30,15 @@ export const MENU_ITEMS: NbMenuItem[] = [
     },
   },
   {
+    title: 'Messaggi',
+    link: '/pages/extra-components/tabs',
+    icon: 'nb-paper-plane',
+    data: {
+      permission: 'view',
+      resource: 'admin',
+    },
+  },
+  {
     title: 'Menu',
     link: '/pages/extra-components/alert',
     icon: 'nb-menu',
