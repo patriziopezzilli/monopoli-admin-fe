@@ -6,96 +6,42 @@
         <nb-tabset>
           <nb-tab tabTitle="Antipasti">
             <nb-list>
-              <nb-list-item>
-                Test
-              </nb-list-item>
-              <nb-list-item>
-                Test
-              </nb-list-item>
-              <nb-list-item>
-                Test
-              </nb-list-item>
-              <nb-list-item>
-                Test
-              </nb-list-item>
-              <nb-list-item>
-                Test
+              <nb-list-item *ngFor="let antipasto of antipasti">
+                <nb-card>
+                  <nb-card-header>
+                    {{antipasto.nome}}
+                  </nb-card-header>
+                  <nb-card-body>
+                    {{antipasto.descrizione}}
+                  </nb-card-body>
+                  <nb-card-footer>
+                    {{antipasto.prezzo}}
+                  </nb-card-footer>
+                </nb-card>
               </nb-list-item>
             </nb-list>
           </nb-tab>
-          <nb-tab tabTitle="Primi">
+          <nb-tab tabTitle="Primi e secondi">
             <nb-list>
-              <nb-list-item>
-                Test
-              </nb-list-item>
-              <nb-list-item>
-                Test
-              </nb-list-item>
-              <nb-list-item>
-                Test
-              </nb-list-item>
-              <nb-list-item>
-                Test
-              </nb-list-item>
-              <nb-list-item>
-                Test
+              <nb-list-item *ngFor="let primo of primiesecondi">
               </nb-list-item>
             </nb-list>
           </nb-tab>
-          <nb-tab tabTitle="Secondi">
+          <nb-tab tabTitle="Contorni">
             <nb-list>
-              <nb-list-item>
-                Test
-              </nb-list-item>
-              <nb-list-item>
-                Test
-              </nb-list-item>
-              <nb-list-item>
-                Test
-              </nb-list-item>
-              <nb-list-item>
-                Test
-              </nb-list-item>
-              <nb-list-item>
-                Test
+              <nb-list-item *ngFor="let contorno of contorni">
               </nb-list-item>
             </nb-list>
           </nb-tab>
           <nb-tab tabTitle="Pizze">
             <nb-list>
-              <nb-list-item>
-                Test
-              </nb-list-item>
-              <nb-list-item>
-                Test
-              </nb-list-item>
-              <nb-list-item>
-                Test
-              </nb-list-item>
-              <nb-list-item>
-                Test
-              </nb-list-item>
-              <nb-list-item>
-                Test
+              <nb-list-item *ngFor="let pizza of pizze">
               </nb-list-item>
             </nb-list>
           </nb-tab>
           <nb-tab tabTitle="Dolci e Dessert">
             <nb-list>
-              <nb-list-item>
-                Test
-              </nb-list-item>
-              <nb-list-item>
-                Test
-              </nb-list-item>
-              <nb-list-item>
-                Test
-              </nb-list-item>
-              <nb-list-item>
-                Test
-              </nb-list-item>
-              <nb-list-item>
-                Test
+              <nb-list-item *ngFor="let dolce of dessert">
               </nb-list-item>
             </nb-list>
           </nb-tab>

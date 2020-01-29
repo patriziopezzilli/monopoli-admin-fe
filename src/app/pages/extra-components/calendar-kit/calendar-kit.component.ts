@@ -77,7 +77,7 @@ export class CalendarKitFullCalendarShowcaseComponent {
       .pipe(
         map(
           (data: Pasto[]) => data.map(event => {
-            return new Pasto(event.nome, event.descrizione, event.prezzo, event.categoria);
+            return new Pasto(null, event.nome, event.descrizione, event.prezzo, event.categoria);
           }),
         ),
       );
@@ -88,7 +88,7 @@ export class CalendarKitFullCalendarShowcaseComponent {
       .pipe(
         map(
           (data: Pasto[]) => data.map(event => {
-            return new Pasto(event.nome, event.descrizione, event.prezzo, event.categoria);
+            return new Pasto(null, event.nome, event.descrizione, event.prezzo, event.categoria);
           }),
         ),
       );
@@ -99,7 +99,7 @@ export class CalendarKitFullCalendarShowcaseComponent {
       .pipe(
         map(
           (data: Pasto[]) => data.map(event => {
-            return new Pasto(event.nome, event.descrizione, event.prezzo, event.categoria);
+            return new Pasto(null, event.nome, event.descrizione, event.prezzo, event.categoria);
           }),
         ),
       );

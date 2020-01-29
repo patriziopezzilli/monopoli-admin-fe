@@ -48,6 +48,7 @@ export class MenuDelGiornoSaveRequest implements OnInit {
 
 export class Pasto {
   constructor(
+    public id: number,
     public nome: string,
     public descrizione: string,
     public prezzo: string,
