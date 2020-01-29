@@ -17,6 +17,7 @@ import {ThemeModule} from './@theme/theme.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AuthGuard} from './auth.guard';
 import {FormsModule} from '@angular/forms';
+import {NbToastrModule} from '@nebular/theme';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import {FormsModule} from '@angular/forms';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    NbToastrModule.forRoot(),
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
     CoreModule.forRoot(),

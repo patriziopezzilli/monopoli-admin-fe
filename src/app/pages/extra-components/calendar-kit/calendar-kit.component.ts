@@ -5,6 +5,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Configuration} from '../../../app.component';
 import {map} from 'rxjs/operators';
+import {NbToastrService} from '@nebular/theme';
 
 @Component({
   selector: 'ngx-calendar-kit',
@@ -18,7 +19,7 @@ export class CalendarKitFullCalendarShowcaseComponent {
   secondi: Pasto[];
   pizze: Pasto[];
 
-  constructor(private http: HttpClient) {
+  constructor(private toastrService: NbToastrService, private http: HttpClient) {
     this.getPrimi()
       .subscribe((data) => {
         this.primi = data;
@@ -34,12 +35,20 @@ export class CalendarKitFullCalendarShowcaseComponent {
   }
 
   public inviaMail() {
-    if (confirm("Sei sicuro di voler inviare la mail ai clienti?")) {
+    if (confirm('Sei sicuro di voler inviare la mail ai clienti?')) {
       console.log('> invia mail..');
 
       this.http.get<any>(Configuration.server + '/menudelgiorno/mail').subscribe({
         complete: function () {
           console.log('> server return OK');
+
+          const status = 'success';
+          const position = 'top-right';
+
+          this.toastrService.show(
+            '',
+            `Email inviata con successo ai clienti!`,
+            { position, status });
         }, error: function (p1: any) {
           console.log('> server return ERROR');
         }, next() {
@@ -49,7 +58,7 @@ export class CalendarKitFullCalendarShowcaseComponent {
   }
 
   public inviaStampa() {
-    if (confirm("Sei sicuro di voler inviare il menu in stampa?")) {
+    if (confirm('Sei sicuro di voler inviare il menu in stampa?')) {
       console.log('> invia in stampa..');
 
       this.http.get<any>(Configuration.server + '/menudelgiorno/stampa').subscribe({
