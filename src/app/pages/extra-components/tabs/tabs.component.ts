@@ -38,7 +38,7 @@ export class TabsComponent {
   }
 
   public post(messaggioId: number, risposta) {
-    this.http.post(Configuration.server + '/messaggioId=' + messaggioId + '&risposta=' + risposta.value, {}).subscribe({
+    this.http.post(Configuration.server + '/messaggi?messaggioId=' + messaggioId + '&risposta=' + risposta.value, {}).subscribe({
       complete: function () {
         console.log('> server return OK');
       }, error: function (p1: any) {
