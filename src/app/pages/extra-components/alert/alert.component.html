@@ -9,14 +9,11 @@
               <nb-list-item *ngFor="let antipasto of antipasti">
                 <nb-card>
                   <nb-card-header>
-                    {{antipasto.nome}}
+                    {{antipasto.nome}} / {{antipasto.descrizione}}
                   </nb-card-header>
                   <nb-card-body>
-                    {{antipasto.descrizione}}
-                  </nb-card-body>
-                  <nb-card-footer>
                     {{antipasto.prezzo}}
-                  </nb-card-footer>
+                  </nb-card-body>
                 </nb-card>
               </nb-list-item>
             </nb-list>
@@ -26,14 +23,11 @@
               <nb-list-item *ngFor="let primo of primiesecondi">
                 <nb-card>
                   <nb-card-header>
-                    {{primo.nome}}
+                    {{primo.nome}} / {{primo.descrizione}}
                   </nb-card-header>
                   <nb-card-body>
-                    {{primo.descrizione}}
-                  </nb-card-body>
-                  <nb-card-footer>
                     {{primo.prezzo}}
-                  </nb-card-footer>
+                  </nb-card-body>
                 </nb-card>
               </nb-list-item>
             </nb-list>
@@ -43,14 +37,11 @@
               <nb-list-item *ngFor="let contorno of contorni">
                 <nb-card>
                   <nb-card-header>
-                    {{contorno.nome}}
+                    {{contorno.nome}} / {{contorno.descrizione}}
                   </nb-card-header>
                   <nb-card-body>
-                    {{contorno.descrizione}}
-                  </nb-card-body>
-                  <nb-card-footer>
                     {{contorno.prezzo}}
-                  </nb-card-footer>
+                  </nb-card-body>
                 </nb-card>
               </nb-list-item>
             </nb-list>
@@ -60,14 +51,11 @@
               <nb-list-item *ngFor="let pizza of pizze">
                 <nb-card>
                   <nb-card-header>
-                    {{pizza.nome}}
+                    {{pizza.nome}} / {{pizza.descrizione}}
                   </nb-card-header>
                   <nb-card-body>
-                    {{pizza.descrizione}}
-                  </nb-card-body>
-                  <nb-card-footer>
                     {{pizza.prezzo}}
-                  </nb-card-footer>
+                  </nb-card-body>
                 </nb-card>
               </nb-list-item>
             </nb-list>
@@ -77,14 +65,11 @@
               <nb-list-item *ngFor="let dolce of dessert">
                 <nb-card>
                   <nb-card-header>
-                    {{dolce.nome}}
+                    {{dolce.nome}} / {{dolce.descrizione}}
                   </nb-card-header>
                   <nb-card-body>
-                    {{dolce.descrizione}}
-                  </nb-card-body>
-                  <nb-card-footer>
                     {{dolce.prezzo}}
-                  </nb-card-footer>
+                  </nb-card-body>
                 </nb-card>
               </nb-list-item>
             </nb-list>
