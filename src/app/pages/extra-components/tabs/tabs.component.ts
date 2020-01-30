@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Messaggio, Pasto} from '../../../@core/data/stats-progress-bar';
+import {Messaggio} from '../../../@core/data/stats-progress-bar';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Configuration} from '../../../app.component';
@@ -31,4 +31,21 @@ export class TabsComponent {
         ),
       );
   }
+
+  inviaRisposta(id: number, risposta: string) {
+    console.log('> invio risposta' + risposta + ' per la domanda ' + id + '..');
+    this.post(id, risposta);
+  }
+
+  public post(messaggioId: number, risposta: string) {
+    this.http.post(Configuration.server + '/messaggi?id=' + messaggioId + '&risposta=' + risposta, {}).subscribe({
+      complete: function () {
+        console.log('> server return OK');
+      }, error: function (p1: any) {
+        console.log('> server return ERROR');
+      }, next() {
+      },
+    });
+  }
+
 }

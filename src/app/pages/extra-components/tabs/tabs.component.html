@@ -13,9 +13,9 @@
             <nb-accordion-item>
               <nb-accordion-item-header>{{messaggio.messaggio}}</nb-accordion-item-header>
               <nb-accordion-item-body>
-                <input style="margin-bottom: 1.5em;" type="text" nbInput fullWidth
+                <input #risposta style="margin-bottom: 1.5em;" type="text" nbInput fullWidth
                        placeholder="Risposta">
-                <button nbButton>Invia risposta</button>
+                <button (click)="inviaRisposta(messaggio.id, risposta);" nbButton>Invia risposta</button>
               </nb-accordion-item-body>
             </nb-accordion-item>
           </nb-accordion>
