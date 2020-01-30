@@ -41,7 +41,7 @@ export class AlertComponent {
   }
 
   getAntipasti(): Observable<Pasto[]> {
-    return this.http.get<Pasto[]>(Configuration.server + '/menudelgiorno?categoria=antipasto')
+    return this.http.get<Pasto[]>(Configuration.server + '/menu?categoria=antipasto')
       .pipe(
         map(
           (data: Pasto[]) => data.map(event => {
@@ -52,7 +52,7 @@ export class AlertComponent {
   }
 
   getPrimoESecondo(): Observable<Pasto[]> {
-    return this.http.get<Pasto[]>(Configuration.server + '/menudelgiorno?categoria=primoesecondo')
+    return this.http.get<Pasto[]>(Configuration.server + '/menu?categoria=primoesecondo')
       .pipe(
         map(
           (data: Pasto[]) => data.map(event => {
@@ -63,7 +63,7 @@ export class AlertComponent {
   }
 
   getContorni(): Observable<Pasto[]> {
-    return this.http.get<Pasto[]>(Configuration.server + '/menudelgiorno?categoria=contorno')
+    return this.http.get<Pasto[]>(Configuration.server + '/menu?categoria=contorno')
       .pipe(
         map(
           (data: Pasto[]) => data.map(event => {
@@ -74,7 +74,7 @@ export class AlertComponent {
   }
 
   getPizze(): Observable<Pasto[]> {
-    return this.http.get<Pasto[]>(Configuration.server + '/menudelgiorno?categoria=pizza')
+    return this.http.get<Pasto[]>(Configuration.server + '/menu?categoria=pizza')
       .pipe(
         map(
           (data: Pasto[]) => data.map(event => {
@@ -85,7 +85,7 @@ export class AlertComponent {
   }
 
   getDessert(): Observable<Pasto[]> {
-    return this.http.get<Pasto[]>(Configuration.server + '/menudelgiorno?categoria=dessert')
+    return this.http.get<Pasto[]>(Configuration.server + '/menu?categoria=dessert')
       .pipe(
         map(
           (data: Pasto[]) => data.map(event => {
