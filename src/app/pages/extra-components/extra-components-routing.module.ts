@@ -1,20 +1,20 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
-import { ExtraComponentsComponent } from './extra-components.component';
-import { TreeComponent } from './tree/tree.component';
-import { AlertComponent } from './alert/alert.component';
-import { ProgressBarComponent } from './progress-bar/progress-bar.component';
-import { SpinnerComponent } from './spinner/spinner.component';
-import { CalendarComponent } from './calendar/calendar.component';
-import { ChatComponent } from './chat/chat.component';
-import { Tab1Component, Tab2Component, TabsComponent } from './tabs/tabs.component';
-import { AccordionComponent } from './accordion/accordion.component';
-import { NebularFormInputsComponent } from './form-inputs/nebular-form-inputs.component';
-import { InfiniteListComponent } from './infinite-list/infinite-list.component';
-import { ListComponent } from './list/list.component';
-import { StepperComponent } from './stepper/stepper.component';
-import { CalendarKitFullCalendarShowcaseComponent } from './calendar-kit/calendar-kit.component';
+import {ExtraComponentsComponent} from './extra-components.component';
+import {TreeComponent} from './tree/tree.component';
+import {AlertComponent} from './alert/alert.component';
+import {ProgressBarComponent} from './progress-bar/progress-bar.component';
+import {SpinnerComponent} from './spinner/spinner.component';
+import {CalendarComponent} from './calendar/calendar.component';
+import {ChatComponent} from './chat/chat.component';
+import {TabsComponent} from './tabs/tabs.component';
+import {AccordionComponent} from './accordion/accordion.component';
+import {NebularFormInputsComponent} from './form-inputs/nebular-form-inputs.component';
+import {InfiniteListComponent} from './infinite-list/infinite-list.component';
+import {ListComponent} from './list/list.component';
+import {StepperComponent} from './stepper/stepper.component';
+import {CalendarKitFullCalendarShowcaseComponent} from './calendar-kit/calendar-kit.component';
 
 const routes: Routes = [{
   path: '',
@@ -63,21 +63,6 @@ const routes: Routes = [{
     {
       path: 'tabs',
       component: TabsComponent,
-      children: [
-        {
-          path: '',
-          redirectTo: 'tab1',
-          pathMatch: 'full',
-        },
-        {
-          path: 'tab1',
-          component: Tab1Component,
-        },
-        {
-          path: 'tab2',
-          component: Tab2Component,
-        },
-      ],
     },
     {
       path: 'calendar-kit',
