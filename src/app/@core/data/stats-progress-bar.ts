@@ -57,6 +57,17 @@ export class Pasto {
   }
 }
 
+export class Messaggio {
+  constructor(
+    public id: number,
+    public nome: string,
+    public mail: string,
+    public messaggio: string,
+    public risposta: number,
+  ) {
+  }
+}
+
 
 export abstract class StatsProgressBarData {
   abstract getProgressInfoData(): Observable<ProgressInfo[]>;
