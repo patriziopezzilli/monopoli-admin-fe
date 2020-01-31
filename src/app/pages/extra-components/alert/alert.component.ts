@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
-import {Pasto} from "../../../@core/data/stats-progress-bar";
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {Configuration} from "../../../app.component";
-import {map} from "rxjs/operators";
+import {Pasto} from '../../../@core/data/stats-progress-bar';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {Configuration} from '../../../app.component';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'ngx-alert',
@@ -40,8 +40,34 @@ export class AlertComponent {
       });
   }
 
+  modifica(id: number, nome: string, descrizione: string, prezzo: string, categoria: string) {
+    this.modificaById(id, new Pasto(id, nome, descrizione, prezzo, categoria));
+  }
+
   delete(id: number) {
-    
+    this.deleteById(id);
+  }
+
+  public modificaById(id: number, request: Pasto) {
+    this.http.put(Configuration.server + '/menu/' + id, request).subscribe({
+      complete: function () {
+        console.log('> server return OK');
+      }, error: function (p1: any) {
+        console.log('> server return ERROR');
+      }, next() {
+      },
+    });
+  }
+
+  public deleteById(id: number) {
+    this.http.delete(Configuration.server + '/menu/' + id, {}).subscribe({
+      complete: function () {
+        console.log('> server return OK');
+      }, error: function (p1: any) {
+        console.log('> server return ERROR');
+      }, next() {
+      },
+    });
   }
 
   getAntipasti(): Observable<Pasto[]> {

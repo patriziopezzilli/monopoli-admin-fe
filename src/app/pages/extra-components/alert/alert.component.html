@@ -18,16 +18,25 @@
                           <nb-accordion-item-header>{{antipasto.prezzo}}</nb-accordion-item-header>
                           <nb-accordion-item-body>
                             <input #nome style="margin-top:0.5em;margin-bottom: 1.5em;" type="text" nbInput fullWidth
+                                   value="{{antipasto.nome}}"
                                    placeholder="Nome pasto">
                             <input #descrizione style="margin-bottom: 1.5em;" type="text" nbInput fullWidth
+                                   value="{{antipasto.descrizione}}"
                                    placeholder="Descrizione pasto">
                             <input #prezzo style="margin-bottom: 1.5em;" type="text" nbInput fullWidth
+                                   value="{{antipasto.prezzo}}"
                                    placeholder="Prezzo">
 
-                            <button (click)='delete(antipasto.id);' style="margin-right: 1.0em;" nbButton
+                            <button (click)='delete(antipasto.id);'
+                                    style="background-color: #ff4c6a !important;margin-right: 1.0em;" nbButton
                                     status="danger">Elimina
                             </button>
-                            <button nbButton>Invia modifica</button>
+                            <button
+                              (click)='modifica(antipasto.id, nome.value, descrizione.value, prezzo.value, "antipasto");'
+                              nbButton>
+                              Invia
+                              modifica
+                            </button>
                           </nb-accordion-item-body>
                         </nb-accordion-item>
                       </nb-accordion>
@@ -44,7 +53,33 @@
                       {{primo.nome}} / {{primo.descrizione}}
                     </nb-card-header>
                     <nb-card-body>
-                      {{primo.prezzo}}
+                      <nb-accordion>
+                        <nb-accordion-item>
+                          <nb-accordion-item-header>{{primo.prezzo}}</nb-accordion-item-header>
+                          <nb-accordion-item-body>
+                            <input #nome style="margin-top:0.5em;margin-bottom: 1.5em;" type="text" nbInput fullWidth
+                                   value="{{primo.nome}}"
+                                   placeholder="Nome pasto">
+                            <input #descrizione style="margin-bottom: 1.5em;" type="text" nbInput fullWidth
+                                   value="{{primo.descrizione}}"
+                                   placeholder="Descrizione pasto">
+                            <input #prezzo style="margin-bottom: 1.5em;" type="text" nbInput fullWidth
+                                   value="{{primo.prezzo}}"
+                                   placeholder="Prezzo">
+
+                            <button (click)='delete(primo.id);'
+                                    style="background-color: #ff4c6a !important;margin-right: 1.0em;" nbButton
+                                    status="danger">Elimina
+                            </button>
+                            <button
+                              (click)='modifica(primo.id, nome.value, descrizione.value, prezzo.value, "primoesecondo");'
+                              nbButton>
+                              Invia
+                              modifica
+                            </button>
+                          </nb-accordion-item-body>
+                        </nb-accordion-item>
+                      </nb-accordion>
                     </nb-card-body>
                   </nb-card>
                 </nb-list-item>
@@ -58,7 +93,33 @@
                       {{contorno.nome}} / {{contorno.descrizione}}
                     </nb-card-header>
                     <nb-card-body>
-                      {{contorno.prezzo}}
+                      <nb-accordion>
+                        <nb-accordion-item>
+                          <nb-accordion-item-header>{{contorno.prezzo}}</nb-accordion-item-header>
+                          <nb-accordion-item-body>
+                            <input #nome style="margin-top:0.5em;margin-bottom: 1.5em;" type="text" nbInput fullWidth
+                                   value="{{contorno.nome}}"
+                                   placeholder="Nome pasto">
+                            <input #descrizione style="margin-bottom: 1.5em;" type="text" nbInput fullWidth
+                                   value="{{contorno.descrizione}}"
+                                   placeholder="Descrizione pasto">
+                            <input #prezzo style="margin-bottom: 1.5em;" type="text" nbInput fullWidth
+                                   value="{{contorno.prezzo}}"
+                                   placeholder="Prezzo">
+
+                            <button (click)='delete(contorno.id);'
+                                    style="background-color: #ff4c6a !important;margin-right: 1.0em;" nbButton
+                                    status="danger">Elimina
+                            </button>
+                            <button
+                              (click)='modifica(contorno.id, nome.value, descrizione.value, prezzo.value, "contorno");'
+                              nbButton>
+                              Invia
+                              modifica
+                            </button>
+                          </nb-accordion-item-body>
+                        </nb-accordion-item>
+                      </nb-accordion>
                     </nb-card-body>
                   </nb-card>
                 </nb-list-item>
@@ -72,7 +133,33 @@
                       {{pizza.nome}} / {{pizza.descrizione}}
                     </nb-card-header>
                     <nb-card-body>
-                      {{pizza.prezzo}}
+                      <nb-accordion>
+                        <nb-accordion-item>
+                          <nb-accordion-item-header>{{pizza.prezzo}}</nb-accordion-item-header>
+                          <nb-accordion-item-body>
+                            <input #nome style="margin-top:0.5em;margin-bottom: 1.5em;" type="text" nbInput fullWidth
+                                   value="{{pizza.nome}}"
+                                   placeholder="Nome pasto">
+                            <input #descrizione style="margin-bottom: 1.5em;" type="text" nbInput fullWidth
+                                   value="{{pizza.descrizione}}"
+                                   placeholder="Descrizione pasto">
+                            <input #prezzo style="margin-bottom: 1.5em;" type="text" nbInput fullWidth
+                                   value="{{pizza.prezzo}}"
+                                   placeholder="Prezzo">
+
+                            <button (click)='delete(pizza.id);'
+                                    style="background-color: #ff4c6a !important;margin-right: 1.0em;" nbButton
+                                    status="danger">Elimina
+                            </button>
+                            <button
+                              (click)='modifica(pizza.id, nome.value, descrizione.value, prezzo.value, "pizza");'
+                              nbButton>
+                              Invia
+                              modifica
+                            </button>
+                          </nb-accordion-item-body>
+                        </nb-accordion-item>
+                      </nb-accordion>
                     </nb-card-body>
                   </nb-card>
                 </nb-list-item>
@@ -86,7 +173,33 @@
                       {{dolce.nome}} / {{dolce.descrizione}}
                     </nb-card-header>
                     <nb-card-body>
-                      {{dolce.prezzo}}
+                      <nb-accordion>
+                        <nb-accordion-item>
+                          <nb-accordion-item-header>{{dolce.prezzo}}</nb-accordion-item-header>
+                          <nb-accordion-item-body>
+                            <input #nome style="margin-top:0.5em;margin-bottom: 1.5em;" type="text" nbInput fullWidth
+                                   value="{{dolce.nome}}"
+                                   placeholder="Nome pasto">
+                            <input #descrizione style="margin-bottom: 1.5em;" type="text" nbInput fullWidth
+                                   value="{{dolce.descrizione}}"
+                                   placeholder="Descrizione pasto">
+                            <input #prezzo style="margin-bottom: 1.5em;" type="text" nbInput fullWidth
+                                   value="{{dolce.prezzo}}"
+                                   placeholder="Prezzo">
+
+                            <button (click)='delete(dolce.id);'
+                                    style="background-color: #ff4c6a !important;margin-right: 1.0em;" nbButton
+                                    status="danger">Elimina
+                            </button>
+                            <button
+                              (click)='modifica(dolce.id, nome.value, descrizione.value, prezzo.value, "dessert");'
+                              nbButton>
+                              Invia
+                              modifica
+                            </button>
+                          </nb-accordion-item-body>
+                        </nb-accordion-item>
+                      </nb-accordion>
                     </nb-card-body>
                   </nb-card>
                 </nb-list-item>

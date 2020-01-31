@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {Configuration} from "../../../app.component";
+import {Pasto} from "../../../@core/data/stats-progress-bar";
 
 @Component({
   selector: 'ngx-tree',
@@ -7,27 +10,26 @@ import { Component } from '@angular/core';
 })
 export class TreeComponent {
 
-  nodes = [{
-    name: 'Programming languages by programming paradigm',
-    children: [{
-      name: 'Object-oriented programming',
-      children: [{
-        name: 'Java',
-      }, {
-        name: 'C++',
-      }, {
-        name: 'C#',
-      }],
-    }, {
-      name: 'Prototype-based programming',
-      children: [{
-        name: 'JavaScript',
-      }, {
-        name: 'CoffeeScript',
-      }, {
-        name: 'Lua',
-      }],
-    }],
-  }];
+  selezione: string = 'Categoria';
 
+  constructor(private http: HttpClient) {
+
+  }
+
+  crea(nome: string, descrizione: string, prezzo: string) {
+    this.http.post(Configuration.server + '/menu', new Pasto(null, nome, descrizione, prezzo, this.selezione)).subscribe({
+      complete: function () {
+        console.log('> server return OK');
+      }, error: function (p1: any) {
+        console.log('> server return ERROR');
+      }, next() {
+      },
+    });
+  }
+
+  selection(selezione: string) {
+
+    console.log('> scelgo ' + selezione);
+    this.selezione = selezione;
+  }
 }

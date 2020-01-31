@@ -1,10 +1,27 @@
-<div class="row">
-  <div class="col-md-6">
-    <nb-card>
-      <nb-card-header>Tree</nb-card-header>
-      <nb-card-body>
-        <tree-root [nodes]="nodes"></tree-root>
-      </nb-card-body>
-    </nb-card>
+<form>
+  <div class="row">
+    <div class="col-md-12 col-lg-12 col-xxxl-12">
+      <nb-card>
+        <nb-card-header>Aggiungi al menù</nb-card-header>
+        <nb-card-body>
+          <input #nome name="nome" style="margin-bottom: 1.5em;" type="text" nbInput fullWidth
+                 placeholder="Nome">
+          <input #descrizione name="descrizione" style="margin-bottom: 1.5em;" type="text" nbInput fullWidth
+                 placeholder="Descrizione">
+          <input #prezzo name="prezzo" style="margin-bottom: 1.5em;" type="text" nbInput fullWidth
+                 placeholder="Prezzo (11.00 <-- usare questo formato)">
+
+          <nb-select  [selected]='selezione' style="margin-bottom: 1.5em;" placeholder="{{selezione}}" status="info">
+            <nb-option (selectionChange)="selection('antipasto')">Antipasto</nb-option>
+            <nb-option (selectionChange)="selection('primoesecondo')">Primo o secondo</nb-option>
+            <nb-option (selectionChange)="selection('contorno')">Contorno</nb-option>
+            <nb-option (selectionChange)="selection('pizza')">Pizza</nb-option>
+            <nb-option (selectionChange)="selection('dessert')">Dessert</nb-option>
+          </nb-select>
+
+          <button (click)="crea(nome.value, descrizione.value, prezzo.value);" nbButton>Salva</button>
+        </nb-card-body>
+      </nb-card>
+    </div>
   </div>
-</div>
+</form>

@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Configuration} from '../../../app.component';
 import {map} from 'rxjs/operators';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'ngx-tabs',
@@ -14,7 +15,7 @@ export class TabsComponent {
 
   messaggi: Messaggio[];
 
-  constructor(private http: HttpClient) {
+  constructor(private router: Router, private http: HttpClient) {
     this.getMessaggi()
       .subscribe((data) => {
         this.messaggi = data;
@@ -35,6 +36,9 @@ export class TabsComponent {
   inviaRisposta(id: number, risposta) {
     console.log('> invio risposta' + risposta.value + ' per la domanda ' + id + '..');
     this.post(id, risposta);
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    };
   }
 
   public post(messaggioId: number, risposta) {

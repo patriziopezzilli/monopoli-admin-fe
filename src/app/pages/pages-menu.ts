@@ -46,6 +46,17 @@ export const MENU_ITEMS: NbMenuItem[] = [
       permission: 'view',
       resource: 'admin',
     },
+    children: [
+      {
+        title: 'Modifica o Elimina',
+        icon: 'nb-paper-plane',
+        link: '/pages/extra-components/alert',
+      },
+      {
+        title: 'Aggiungi al menù',
+        icon: 'nb-compose',
+        link: '/pages/extra-components/tree',
+      }],
   },
   {
     title: 'Menu del Giorno',
