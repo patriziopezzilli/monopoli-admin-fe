@@ -23,7 +23,9 @@
 
   // loading progress bar
   @include ngx-pace-theme();
-};
+}
+
+;
 
 article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: none;
@@ -55,5 +57,14 @@ nb-menu .menu-item a.active::before {
 }
 
 #toast-container > div {
-  opacity:1 !important;
+  opacity: 1 !important;
+}
+
+.nb-theme-default nb-stepper .header .step.completed .label-index {
+  background-color: #039e58 !important;
+  border: 2px solid #039e58 !important;
+}
+
+.nb-theme-default nb-stepper .header .step.completed .label {
+  color: #039e58 !important;
 }

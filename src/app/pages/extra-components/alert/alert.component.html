@@ -12,7 +12,22 @@
                     {{antipasto.nome}} / {{antipasto.descrizione}}
                   </nb-card-header>
                   <nb-card-body>
-                    {{antipasto.prezzo}}
+                    <nb-accordion>
+                      <nb-accordion-item>
+                        <nb-accordion-item-header>{{antipasto.prezzo}}</nb-accordion-item-header>
+                        <nb-accordion-item-body>
+                          <input #nome style="margin-top:0.5em;margin-bottom: 1.5em;" type="text" nbInput fullWidth
+                                 placeholder="Nome pasto">
+                          <input #descrizione style="margin-bottom: 1.5em;" type="text" nbInput fullWidth
+                                 placeholder="Descrizione pasto">
+                          <input #prezzo style="margin-bottom: 1.5em;" type="text" nbInput fullWidth
+                                 placeholder="Prezzo">
+
+                          <button style="margin-bottom: 0.5em;" nbButton status="danger">Elimina</button>
+                          <button nbButton>Invia modifica</button>
+                        </nb-accordion-item-body>
+                      </nb-accordion-item>
+                    </nb-accordion>
                   </nb-card-body>
                 </nb-card>
               </nb-list-item>
