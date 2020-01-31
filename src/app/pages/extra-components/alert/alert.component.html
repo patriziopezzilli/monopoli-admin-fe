@@ -24,7 +24,7 @@
                             <input #prezzo style="margin-bottom: 1.5em;" type="text" nbInput fullWidth
                                    placeholder="Prezzo">
 
-                            <button style="margin-right: 1.0em;" nbButton status="danger">Elimina</button>
+                            <button (click)='delete(antipasto.id);' style="margin-right: 1.0em;" nbButton status="danger">Elimina</button>
                             <button nbButton>Invia modifica</button>
                           </nb-accordion-item-body>
                         </form>

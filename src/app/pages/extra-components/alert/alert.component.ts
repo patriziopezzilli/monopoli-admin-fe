@@ -40,6 +40,10 @@ export class AlertComponent {
       });
   }
 
+  delete(id: number) {
+    
+  }
+
   getAntipasti(): Observable<Pasto[]> {
     return this.http.get<Pasto[]>(Configuration.server + '/menu?categoria=antipasto')
       .pipe(
