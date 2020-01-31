@@ -1,20 +1,20 @@
-<div class="row">
-  <div class="col-md-12 col-lg-12 col-xxxl-12">
-    <nb-card>
-      <nb-card-header>Menu</nb-card-header>
-      <nb-card-body>
-        <nb-tabset>
-          <nb-tab tabTitle="Antipasti">
-            <nb-list>
-              <nb-list-item *ngFor="let antipasto of antipasti">
-                <nb-card>
-                  <nb-card-header>
-                    {{antipasto.nome}} / {{antipasto.descrizione}}
-                  </nb-card-header>
-                  <nb-card-body>
-                    <nb-accordion>
-                      <nb-accordion-item>
-                        <form>
+<form>
+  <div class="row">
+    <div class="col-md-12 col-lg-12 col-xxxl-12">
+      <nb-card>
+        <nb-card-header>Menu</nb-card-header>
+        <nb-card-body>
+          <nb-tabset>
+            <nb-tab tabTitle="Antipasti">
+              <nb-list>
+                <nb-list-item *ngFor="let antipasto of antipasti">
+                  <nb-card>
+                    <nb-card-header>
+                      {{antipasto.nome}} / {{antipasto.descrizione}}
+                    </nb-card-header>
+                    <nb-card-body>
+                      <nb-accordion>
+                        <nb-accordion-item>
                           <nb-accordion-item-header>{{antipasto.prezzo}}</nb-accordion-item-header>
                           <nb-accordion-item-body>
                             <input #nome style="margin-top:0.5em;margin-bottom: 1.5em;" type="text" nbInput fullWidth
@@ -24,75 +24,78 @@
                             <input #prezzo style="margin-bottom: 1.5em;" type="text" nbInput fullWidth
                                    placeholder="Prezzo">
 
-                            <button (click)='delete(antipasto.id);' style="margin-right: 1.0em;" nbButton status="danger">Elimina</button>
+                            <button (click)='delete(antipasto.id);' style="margin-right: 1.0em;" nbButton
+                                    status="danger">Elimina
+                            </button>
                             <button nbButton>Invia modifica</button>
                           </nb-accordion-item-body>
-                        </form>
-                      </nb-accordion-item>
-                    </nb-accordion>
-                  </nb-card-body>
-                </nb-card>
-              </nb-list-item>
-            </nb-list>
-          </nb-tab>
-          <nb-tab tabTitle="Primi e secondi">
-            <nb-list>
-              <nb-list-item *ngFor="let primo of primiesecondi">
-                <nb-card>
-                  <nb-card-header>
-                    {{primo.nome}} / {{primo.descrizione}}
-                  </nb-card-header>
-                  <nb-card-body>
-                    {{primo.prezzo}}
-                  </nb-card-body>
-                </nb-card>
-              </nb-list-item>
-            </nb-list>
-          </nb-tab>
-          <nb-tab tabTitle="Contorni">
-            <nb-list>
-              <nb-list-item *ngFor="let contorno of contorni">
-                <nb-card>
-                  <nb-card-header>
-                    {{contorno.nome}} / {{contorno.descrizione}}
-                  </nb-card-header>
-                  <nb-card-body>
-                    {{contorno.prezzo}}
-                  </nb-card-body>
-                </nb-card>
-              </nb-list-item>
-            </nb-list>
-          </nb-tab>
-          <nb-tab tabTitle="Pizze">
-            <nb-list>
-              <nb-list-item *ngFor="let pizza of pizze">
-                <nb-card>
-                  <nb-card-header>
-                    {{pizza.nome}} / {{pizza.descrizione}}
-                  </nb-card-header>
-                  <nb-card-body>
-                    {{pizza.prezzo}}
-                  </nb-card-body>
-                </nb-card>
-              </nb-list-item>
-            </nb-list>
-          </nb-tab>
-          <nb-tab tabTitle="Dolci e Dessert">
-            <nb-list>
-              <nb-list-item *ngFor="let dolce of dessert">
-                <nb-card>
-                  <nb-card-header>
-                    {{dolce.nome}} / {{dolce.descrizione}}
-                  </nb-card-header>
-                  <nb-card-body>
-                    {{dolce.prezzo}}
-                  </nb-card-body>
-                </nb-card>
-              </nb-list-item>
-            </nb-list>
-          </nb-tab>
-        </nb-tabset>
-      </nb-card-body>
-    </nb-card>
+                        </nb-accordion-item>
+                      </nb-accordion>
+                    </nb-card-body>
+                  </nb-card>
+                </nb-list-item>
+              </nb-list>
+            </nb-tab>
+            <nb-tab tabTitle="Primi e secondi">
+              <nb-list>
+                <nb-list-item *ngFor="let primo of primiesecondi">
+                  <nb-card>
+                    <nb-card-header>
+                      {{primo.nome}} / {{primo.descrizione}}
+                    </nb-card-header>
+                    <nb-card-body>
+                      {{primo.prezzo}}
+                    </nb-card-body>
+                  </nb-card>
+                </nb-list-item>
+              </nb-list>
+            </nb-tab>
+            <nb-tab tabTitle="Contorni">
+              <nb-list>
+                <nb-list-item *ngFor="let contorno of contorni">
+                  <nb-card>
+                    <nb-card-header>
+                      {{contorno.nome}} / {{contorno.descrizione}}
+                    </nb-card-header>
+                    <nb-card-body>
+                      {{contorno.prezzo}}
+                    </nb-card-body>
+                  </nb-card>
+                </nb-list-item>
+              </nb-list>
+            </nb-tab>
+            <nb-tab tabTitle="Pizze">
+              <nb-list>
+                <nb-list-item *ngFor="let pizza of pizze">
+                  <nb-card>
+                    <nb-card-header>
+                      {{pizza.nome}} / {{pizza.descrizione}}
+                    </nb-card-header>
+                    <nb-card-body>
+                      {{pizza.prezzo}}
+                    </nb-card-body>
+                  </nb-card>
+                </nb-list-item>
+              </nb-list>
+            </nb-tab>
+            <nb-tab tabTitle="Dolci e Dessert">
+              <nb-list>
+                <nb-list-item *ngFor="let dolce of dessert">
+                  <nb-card>
+                    <nb-card-header>
+                      {{dolce.nome}} / {{dolce.descrizione}}
+                    </nb-card-header>
+                    <nb-card-body>
+                      {{dolce.prezzo}}
+                    </nb-card-body>
+                  </nb-card>
+                </nb-list-item>
+              </nb-list>
+            </nb-tab>
+          </nb-tabset>
+        </nb-card-body>
+      </nb-card>
+    </div>
   </div>
-</div>
+
+</form>
