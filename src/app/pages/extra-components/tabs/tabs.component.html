@@ -1,26 +1,26 @@
-<form>
-  <div class="row">
-    <div class="col-md-12 col-lg-12 col-xxxl-12">
-      <!-- one card for each messagge -->
-      <nb-card style="margin-top: 1.5em;" *ngFor="let messaggio of messaggi">
-        <nb-card-header>
-          <!-- <nb-badge text="Risposto" status="success" position="top left">
-          </nb-badge>-->
-          Messaggio da {{messaggio.nome}}
-        </nb-card-header>
-        <nb-card-body>
-          <nb-accordion>
-            <nb-accordion-item>
+<div class="row">
+  <div class="col-md-12 col-lg-12 col-xxxl-12">
+    <!-- one card for each messagge -->
+    <nb-card style="margin-top: 1.5em;" *ngFor="let messaggio of messaggi">
+      <nb-card-header>
+        <!-- <nb-badge text="Risposto" status="success" position="top left">
+        </nb-badge>-->
+        Messaggio da {{messaggio.nome}}
+      </nb-card-header>
+      <nb-card-body>
+        <nb-accordion>
+          <nb-accordion-item>
+            <form>
               <nb-accordion-item-header>{{messaggio.messaggio}}</nb-accordion-item-header>
               <nb-accordion-item-body>
                 <input #risposta style="margin-bottom: 1.5em;" type="text" nbInput fullWidth
                        placeholder="Risposta">
                 <button (click)="inviaRisposta(messaggio.id, risposta);" nbButton>Invia risposta</button>
               </nb-accordion-item-body>
-            </nb-accordion-item>
-          </nb-accordion>
-        </nb-card-body>
-      </nb-card>
-    </div>
+            </form>
+          </nb-accordion-item>
+        </nb-accordion>
+      </nb-card-body>
+    </nb-card>
   </div>
-</form>
+</div>
