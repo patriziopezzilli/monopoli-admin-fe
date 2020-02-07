@@ -32,6 +32,7 @@ export class NebularFormInputsComponent {
     this.http.post(Configuration.server + '/config/descrizione', data).subscribe({
       complete: function () {
         console.log('> server return OK');
+        alert('Descrizione aggiornata con successo!');
       }, error: function (p1: any) {
         console.log('> server return ERROR');
       }, next() {
