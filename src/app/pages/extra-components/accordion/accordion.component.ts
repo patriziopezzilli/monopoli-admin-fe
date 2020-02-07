@@ -69,6 +69,7 @@ export class AccordionComponent {
     this.http.post(Configuration.server + '/tripadvisor?id=' + id, data).subscribe({
       complete: function () {
         console.log('> server return OK');
+        alert('Recensione aggiornata con successo!');
       }, error: function (p1: any) {
         console.log('> server return ERROR');
       }, next() {

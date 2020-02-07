@@ -45,6 +45,7 @@ export class TabsComponent {
     this.http.post(Configuration.server + '/messaggi?messaggioId=' + messaggioId + '&risposta=' + risposta.value, {}).subscribe({
       complete: function () {
         console.log('> server return OK');
+        alert('Risposta inviata con successo!');
       }, error: function (p1: any) {
         console.log('> server return ERROR');
       }, next() {

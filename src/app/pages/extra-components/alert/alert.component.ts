@@ -52,6 +52,7 @@ export class AlertComponent {
     this.http.put(Configuration.server + '/menu/' + id, request).subscribe({
       complete: function () {
         console.log('> server return OK');
+        alert('Modifica effettuata con successo!');
       }, error: function (p1: any) {
         console.log('> server return ERROR');
       }, next() {
@@ -63,6 +64,7 @@ export class AlertComponent {
     this.http.delete(Configuration.server + '/menu/' + id, {}).subscribe({
       complete: function () {
         console.log('> server return OK');
+        alert('Pasto eliminato con successo!');
       }, error: function (p1: any) {
         console.log('> server return ERROR');
       }, next() {

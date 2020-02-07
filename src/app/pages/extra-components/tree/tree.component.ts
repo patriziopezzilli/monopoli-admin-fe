@@ -20,6 +20,7 @@ export class TreeComponent {
     this.http.post(Configuration.server + '/menu', new Pasto(null, nome, descrizione, prezzo, this.selezione)).subscribe({
       complete: function () {
         console.log('> server return OK');
+        alert('Pasto creato con successo!');
       }, error: function (p1: any) {
         console.log('> server return ERROR');
       }, next() {

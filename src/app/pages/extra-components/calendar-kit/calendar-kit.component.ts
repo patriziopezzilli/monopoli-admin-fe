@@ -41,6 +41,7 @@ export class CalendarKitFullCalendarShowcaseComponent {
       this.http.get<any>(Configuration.server + '/menudelgiorno/mail').subscribe({
         complete: function () {
           console.log('> server return OK');
+          alert('Email inviata con successo ai clienti!');
 
           const status = 'success';
           const position = 'top-right';
@@ -64,6 +65,7 @@ export class CalendarKitFullCalendarShowcaseComponent {
       this.http.get<any>(Configuration.server + '/menudelgiorno/stampa').subscribe({
         complete: function () {
           console.log('> server return OK');
+          alert('Email con il pdf da stampare inviata con successo!');
         }, error: function (p1: any) {
           console.log('> server return ERROR');
         }, next() {
