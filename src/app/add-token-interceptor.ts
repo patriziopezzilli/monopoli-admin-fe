@@ -19,6 +19,7 @@ export class AddTokenInterceptor implements HttpInterceptor {
       }
     });
     req = req.clone({headers: req.headers.append('Accept', 'application/json').append('Content-Type', 'application/json')});
+    req = req.clone({headers: req.headers.append('M-ID', 'MONOPOLI')});
     return next.handle(req);
   }
 }

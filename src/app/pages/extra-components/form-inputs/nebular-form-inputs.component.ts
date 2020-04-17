@@ -29,7 +29,7 @@ export class NebularFormInputsComponent {
   }
 
   public post(data: Config) {
-    this.http.post(Configuration.server + '/config/descrizione', data).subscribe({
+    this.http.post(Configuration.server + '/config/description', data).subscribe({
       complete: function () {
         console.log('> server return OK');
         alert('Descrizione aggiornata con successo!');
@@ -45,7 +45,7 @@ export class NebularFormInputsComponent {
   }
 
   getDescrizione(): Observable<Config> {
-    return this.http.get<Config>(Configuration.server + '/config/descrizione')
+    return this.http.get<Config>(Configuration.server + '/config/description')
       .pipe();
   }
 }
