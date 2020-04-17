@@ -22,5 +22,5 @@ export class AppComponent implements OnInit {
 
 @Injectable()
 export class Configuration {
-  public static server = 'https://monopoli-backend.herokuapp.com/be-content/api';
+  public static server = 'https://monopoli-backend.herokuapp.com/bee-content/api';
 }
