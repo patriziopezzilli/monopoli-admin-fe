@@ -27,7 +27,7 @@ export class CalendarComponent {
   }
 
   getSottoscritti(): Observable<Sottoscritto[]> {
-    return this.http.get<Sottoscritto[]>(Configuration.server + '/menudelgiorno/sottoscritti')
+    return this.http.get<Sottoscritto[]>(Configuration.server + '/dailymenu/subscribers')
       .pipe(
         map(
           (data: Sottoscritto[]) => data.map(event => {

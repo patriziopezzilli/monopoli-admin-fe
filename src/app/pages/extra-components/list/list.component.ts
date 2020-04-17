@@ -197,7 +197,7 @@ export class ListComponent implements OnInit {
   }
 
   public post(data: MenuDelGiornoSaveRequest) {
-    this.http.post(Configuration.server + '/menudelgiorno', data).subscribe({
+    this.http.post(Configuration.server + '/dailymenu', data).subscribe({
       complete: function () {
         console.log('> server return OK');
         alert('Menù del giorno salvato con successo!');

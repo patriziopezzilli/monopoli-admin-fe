@@ -23,7 +23,7 @@ export class TabsComponent {
   }
 
   getMessaggi(): Observable<Messaggio[]> {
-    return this.http.get<Messaggio[]>(Configuration.server + '/messaggi')
+    return this.http.get<Messaggio[]>(Configuration.server + '/messages')
       .pipe(
         map(
           (data: Messaggio[]) => data.map(event => {
@@ -34,7 +34,6 @@ export class TabsComponent {
   }
 
   inviaRisposta(id: number, risposta) {
-    console.log('> invio risposta' + risposta.value + ' per la domanda ' + id + '..');
     this.post(id, risposta);
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
@@ -42,9 +41,8 @@ export class TabsComponent {
   }
 
   public post(messaggioId: number, risposta) {
-    this.http.post(Configuration.server + '/messaggi?messaggioId=' + messaggioId + '&risposta=' + risposta.value, {}).subscribe({
+    this.http.post(Configuration.server + '/messages?messaggioId=' + messaggioId + '&risposta=' + risposta.value, {}).subscribe({
       complete: function () {
-        console.log('> server return OK');
         alert('Risposta inviata con successo!');
       }, error: function (p1: any) {
         console.log('> server return ERROR');

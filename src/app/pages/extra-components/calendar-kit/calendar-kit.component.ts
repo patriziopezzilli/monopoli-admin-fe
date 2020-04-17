@@ -38,7 +38,7 @@ export class CalendarKitFullCalendarShowcaseComponent {
     if (confirm('Sei sicuro di voler inviare la mail ai clienti?')) {
       console.log('> invia mail..');
 
-      this.http.get<any>(Configuration.server + '/menudelgiorno/mail').subscribe({
+      this.http.get<any>(Configuration.server + '/dailymenu/mail').subscribe({
         complete: function () {
           console.log('> server return OK');
           alert('Email inviata con successo ai clienti!');
@@ -62,7 +62,7 @@ export class CalendarKitFullCalendarShowcaseComponent {
     if (confirm('Sei sicuro di voler inviare il menu in stampa?')) {
       console.log('> invia in stampa..');
 
-      this.http.get<any>(Configuration.server + '/menudelgiorno/stampa').subscribe({
+      this.http.get<any>(Configuration.server + '/dailymenu/print').subscribe({
         complete: function () {
           console.log('> server return OK');
           alert('Email con il pdf da stampare inviata con successo!');
@@ -75,7 +75,7 @@ export class CalendarKitFullCalendarShowcaseComponent {
   }
 
   getPrimi(): Observable<Pasto[]> {
-    return this.http.get<Pasto[]>(Configuration.server + '/menudelgiorno?categoria=primo')
+    return this.http.get<Pasto[]>(Configuration.server + '/dailymenu?categoria=primo')
       .pipe(
         map(
           (data: Pasto[]) => data.map(event => {
@@ -86,7 +86,7 @@ export class CalendarKitFullCalendarShowcaseComponent {
   }
 
   getSecondi(): Observable<Pasto[]> {
-    return this.http.get<Pasto[]>(Configuration.server + '/menudelgiorno?categoria=secondo')
+    return this.http.get<Pasto[]>(Configuration.server + '/dailymenu?categoria=secondo')
       .pipe(
         map(
           (data: Pasto[]) => data.map(event => {
@@ -97,7 +97,7 @@ export class CalendarKitFullCalendarShowcaseComponent {
   }
 
   getPizza(): Observable<Pasto[]> {
-    return this.http.get<Pasto[]>(Configuration.server + '/menudelgiorno?categoria=pizza')
+    return this.http.get<Pasto[]>(Configuration.server + '/dailymenu?categoria=pizza')
       .pipe(
         map(
           (data: Pasto[]) => data.map(event => {

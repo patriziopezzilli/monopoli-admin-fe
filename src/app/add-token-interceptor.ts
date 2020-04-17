@@ -12,14 +12,15 @@ export class AddTokenInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     this.tokenService.get().subscribe((token: NbAuthJWTToken) => {
       if (token.isValid()) {
-        let user: User = token.getPayload();
+        const user: User = token.getPayload();
         localStorage.setItem('currentUser', JSON.stringify(user));
-        let tokenValue = token.getValue();
+        const tokenValue = token.getValue();
         req = req.clone({headers: req.headers.set('Authorization', 'Bearer ' + tokenValue)});
+        req = req.clone({headers: req.headers.append('M-ID', user.merchant)});
       }
     });
+
     req = req.clone({headers: req.headers.append('Accept', 'application/json').append('Content-Type', 'application/json')});
-    req = req.clone({headers: req.headers.append('M-ID', 'MONOPOLI')});
     return next.handle(req);
   }
 }
