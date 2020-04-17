@@ -99,7 +99,7 @@ export const NB_CORE_PROVIDERS = [
           return token;
           },
        },
-        baseEndpoint: 'https://monopoli-backend.herokuapp.com/monopoli-be/api',
+        baseEndpoint: 'https://monopoli-backend.herokuapp.com/be-content/api',
         login: {
           endpoint: '/auth/login',
         },
