@@ -2,7 +2,10 @@
      [class.left]="position === 'normal'"
      [class.right]="position === 'inverse'">
   <div style="font-weight: 900;" class="logo-containter">
-    <a (click)="toggleSidebar()" href="#" class="navigation"><i class="nb-menu"></i></a>
+    <a (click)="toggleSidebar()" href="#" class="navigation">
+     <!-- <i class="nb-menu"></i> -->
+      <img style="width: 0.8em; height: 0.8em;" src="assets/images/honey.png"/>
+    </a>
     <div class="logo" (click)="goToHome()"><span>{{ user.merchantTitle }}</span></div>
   </div>
 </div>

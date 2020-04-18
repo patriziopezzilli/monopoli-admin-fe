@@ -5,7 +5,7 @@
         <nb-card-header>Descrizione Sito</nb-card-header>
         <nb-card-body>
         <textarea name="descrizione" [(ngModel)]="descrizione" (ngModelChange)="changeDescrizione($event)"
-                  style="margin-bottom: 1.5em;" nbInput fullWidth placeholder="Textarea"></textarea>
+                  style="margin-bottom: 1.5em; height: 10em;" nbInput fullWidth placeholder="Textarea"></textarea>
           <button (click)="confermaDescrizione();" nbButton>Salva</button>
         </nb-card-body>
       </nb-card>
