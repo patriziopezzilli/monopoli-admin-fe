@@ -27,6 +27,28 @@
 
 ;
 
+.nb-theme-default nb-context-menu .arrow {
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-bottom: 11px solid #f29c1f;
+}
+
+.nb-theme-default nb-context-menu .arrow {
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-bottom: 11px solid #f29c1f;
+}
+
+.nb-theme-default [nbInput]:focus {
+  outline: none;
+  background-color: #ffffff;
+  border-color: #f29c1f;
+}
+
+.nb-theme-default nb-menu.context-menu .menu-items .menu-item a:focus, .nb-theme-default nb-menu.context-menu .menu-items .menu-item a:active, .nb-theme-default nb-menu.context-menu .menu-items .menu-item a:hover {
+  color: #f29c1f !important;
+}
+
 .nb-theme-default nb-context-menu {
   border: 2px solid #f29c1f !important;
 }
@@ -84,4 +106,11 @@ nb-menu .menu-item a.active::before {
 
 .nb-theme-default nb-stepper .header .step.completed .label {
   color: #e37b24 !important;
+}
+
+@media all and (min-width:569px) and (max-width: 768px) {
+  /* put your css styles in here */
+  #bee-chat {
+    margin-bottom: 3em;
+  }
 }

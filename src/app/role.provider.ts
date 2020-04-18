@@ -17,8 +17,8 @@ export class AppRoleProvider implements NbRoleProvider {
     return this.authService.onTokenChange()
       .pipe(
         map((token: NbAuthJWTToken) => {
-          let user: User = token.getPayload();
-          let defaultRole: Array<string> = ['guest'];
+          const user: User = token.getPayload();
+          const defaultRole: Array<string> = ['guest'];
           let roles: string[];
           roles = token.isValid() ? user.roles : defaultRole;
           return roles;

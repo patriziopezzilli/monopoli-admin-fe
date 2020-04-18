@@ -12,8 +12,8 @@ export const MENU_ITEMS: NbMenuItem[] = [
     },
   },
   {
-    title: 'Descrizione sito',
-    link: '/pages/extra-components/form-inputs',
+    title: 'Descrizione',
+    link: '/pages/extra-components/description',
     icon: 'nb-title',
     data: {
       permission: 'view',
@@ -21,8 +21,8 @@ export const MENU_ITEMS: NbMenuItem[] = [
     },
   },
   {
-    title: 'Gestione Recensioni',
-    link: '/pages/extra-components/accordion',
+    title: 'Recensioni',
+    link: '/pages/extra-components/review',
     icon: 'nb-person',
     data: {
       permission: 'view',
@@ -31,7 +31,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Messaggi',
-    link: '/pages/extra-components/tabs',
+    link: '/pages/extra-components/messages',
     icon: 'nb-paper-plane',
     data: {
       permission: 'view',
@@ -39,8 +39,17 @@ export const MENU_ITEMS: NbMenuItem[] = [
     },
   },
   {
+    title: 'Newsletter',
+    icon: 'nb-email',
+    link: '/pages/extra-components/subscribers',
+    data: {
+      permission: 'view',
+      resource: 'admin',
+    },
+  },
+  {
     title: 'Menu',
-    link: '/pages/extra-components/alert',
+    link: '/pages/extra-components/menu',
     icon: 'nb-menu',
     data: {
       permission: 'view',
@@ -50,18 +59,18 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Modifica o Elimina',
         icon: 'nb-paper-plane',
-        link: '/pages/extra-components/alert',
+        link: '/pages/extra-components/menu',
       },
       {
         title: 'Aggiungi al menù',
         icon: 'nb-compose',
-        link: '/pages/extra-components/tree',
+        link: '/pages/extra-components/add_menu',
       }],
   },
   {
     title: 'Menu del Giorno',
     icon: 'nb-notifications',
-    link: '/pages/tasks',
+    link: '/pages/extra-components/dailymenu',
     data: {
       permission: 'view',
       resource: 'admin',
@@ -70,17 +79,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Menù di oggi',
         icon: 'nb-paper-plane',
-        link: '/pages/extra-components/calendar-kit',
+        link: '/pages/extra-components/dailymenu',
       },
       {
         title: 'Inserisci',
         icon: 'nb-compose',
-        link: '/pages/extra-components/list',
-      },
-      {
-        title: 'Lista sottoscritti',
-        icon: 'nb-email',
-        link: '/pages/extra-components/calendar',
+        link: '/pages/extra-components/add_daily',
       },
     ],
   },

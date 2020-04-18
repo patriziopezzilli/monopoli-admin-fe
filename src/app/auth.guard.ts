@@ -15,11 +15,6 @@ export class AuthGuard implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
 
-    // this.authService.getToken().subscribe((token: NbAuthJWTToken) => {
-    //   if (token.isValid()) {
-    //   }
-    // });
-
     return this.authService.isAuthenticated()
       .pipe(
         tap(authenticated => {

@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { of as observableOf, Observable } from 'rxjs';
-import { ProgressInfo, StatsProgressBarData } from '../data/stats-progress-bar';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
+import {ProgressInfo, StatsProgressBarData} from '../data/stats-progress-bar';
 import {HttpClient} from '@angular/common/http';
 import {Configuration} from '../../app.component';
 import {map} from 'rxjs/operators';

@@ -1,97 +1,69 @@
-import {Component, OnDestroy} from '@angular/core';
-import { NbThemeService } from '@nebular/theme';
-import { takeWhile } from 'rxjs/operators' ;
-import { SolarData } from '../../@core/data/solar';
-
-interface CardSettings {
-  title: string;
-  iconClass: string;
-  type: string;
-}
+import {Component} from '@angular/core';
+import {ChatMessage, ChatMessageRequest} from '../../@core/data/stats-progress-bar';
+import {Observable} from 'rxjs';
+import {Configuration} from '../../app.component';
+import {map, takeWhile} from 'rxjs/operators';
+import {HttpClient} from '@angular/common/http';
+import {NbAuthJWTToken, NbTokenService} from '@nebular/auth';
+import {User} from '../../models/User';
 
 @Component({
-  selector: 'ngx-dashboard',
-  styleUrls: ['./dashboard.component.scss'],
+  selector: 'dashboard',
   templateUrl: './dashboard.component.html',
 })
-export class DashboardComponent implements OnDestroy {
+export class DashboardComponent {
 
   private alive = true;
+  private httpClient: HttpClient;
+  messages: ChatMessage[];
+  user: User;
 
-  solarValue: number;
-  lightCard: CardSettings = {
-    title: 'Light',
-    iconClass: 'nb-lightbulb',
-    type: 'primary',
-  };
-  rollerShadesCard: CardSettings = {
-    title: 'Roller Shades',
-    iconClass: 'nb-roller-shades',
-    type: 'success',
-  };
-  wirelessAudioCard: CardSettings = {
-    title: 'Wireless Audio',
-    iconClass: 'nb-audio',
-    type: 'info',
-  };
-  coffeeMakerCard: CardSettings = {
-    title: 'Coffee Maker',
-    iconClass: 'nb-coffee-maker',
-    type: 'warning',
-  };
-
-  statusCards: string;
-
-  commonStatusCardsSet: CardSettings[] = [
-    this.lightCard,
-    this.rollerShadesCard,
-    this.wirelessAudioCard,
-    this.coffeeMakerCard,
-  ];
-
-  statusCardsByThemes: {
-    default: CardSettings[];
-    cosmic: CardSettings[];
-    corporate: CardSettings[];
-  } = {
-    default: this.commonStatusCardsSet,
-    cosmic: this.commonStatusCardsSet,
-    corporate: [
-      {
-        ...this.lightCard,
-        type: 'warning',
-      },
-      {
-        ...this.rollerShadesCard,
-        type: 'primary',
-      },
-      {
-        ...this.wirelessAudioCard,
-        type: 'danger',
-      },
-      {
-        ...this.coffeeMakerCard,
-        type: 'secondary',
-      },
-    ],
-  };
-
-  constructor(private themeService: NbThemeService,
-              private solarService: SolarData) {
-    this.themeService.getJsTheme()
-      .pipe(takeWhile(() => this.alive))
-      .subscribe(theme => {
-        this.statusCards = this.statusCardsByThemes[theme.name];
+  constructor(private http: HttpClient, private tokenService: NbTokenService) {
+    this.httpClient = http;
+    this.tokenService.get().subscribe((token: NbAuthJWTToken) => {
+      if (token.isValid()) {
+        this.user = token.getPayload();
+        this.user.displayName = this.user.firstName + ' ' + this.user.lastName;
+      }
     });
 
-    this.solarService.getSolarData()
+    this.getMessages()
       .pipe(takeWhile(() => this.alive))
       .subscribe((data) => {
-        this.solarValue = data;
+        this.messages = data;
       });
   }
 
-  ngOnDestroy() {
-    this.alive = false;
+  getMessages(): Observable<ChatMessage[]> {
+    return this.http.get(Configuration.server + '/chat/messages' + '?email=' + this.user.email).pipe(
+      map((data: any[]) => data.map((item: any) => new ChatMessage(
+        item.author,
+        item.date,
+        item.author !== 'You',
+        item.message,
+        null,
+      ))),
+    );
+  }
+
+  sendMessage(event: any) {
+    const text = event.message;
+    this.http.post(Configuration.server + '/chat/messages', new ChatMessageRequest(this.user.email, text))
+      .subscribe({
+        complete: function () {
+          console.log('> server return ok');
+        }, error: function (p1: any) {
+          console.log('> server return ERROR');
+        }, next() {
+        },
+      });
+
+    this.messages.push(new ChatMessage(
+      'You',
+      '',
+      false,
+      text,
+      null,
+    ));
   }
 }

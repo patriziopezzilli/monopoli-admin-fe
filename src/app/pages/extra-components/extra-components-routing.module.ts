@@ -2,75 +2,50 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 import {ExtraComponentsComponent} from './extra-components.component';
-import {TreeComponent} from './tree/tree.component';
-import {AlertComponent} from './alert/alert.component';
-import {ProgressBarComponent} from './progress-bar/progress-bar.component';
-import {SpinnerComponent} from './spinner/spinner.component';
-import {CalendarComponent} from './calendar/calendar.component';
-import {ChatComponent} from './chat/chat.component';
-import {TabsComponent} from './tabs/tabs.component';
-import {AccordionComponent} from './accordion/accordion.component';
-import {NebularFormInputsComponent} from './form-inputs/nebular-form-inputs.component';
-import {InfiniteListComponent} from './infinite-list/infinite-list.component';
-import {ListComponent} from './list/list.component';
-import {StepperComponent} from './stepper/stepper.component';
-import {CalendarKitFullCalendarShowcaseComponent} from './calendar-kit/calendar-kit.component';
+import {AddmenuComponent} from './add_menu/addmenu.component';
+import {MenuComponent} from './menu/menu.component';
+import {SubscribersComponent} from './subscribers/subscribers.component';
+import {MessagesComponent} from './messages/messages.component';
+import {ReviewComponent} from './review/review.component';
+import {DescriptionComponent} from './description/description.component';
+import {AdddailyComponent} from './add_daily/adddaily.component';
+import {DailymenuComponent} from './dailymenu/dailymenu.component';
 
 const routes: Routes = [{
   path: '',
   component: ExtraComponentsComponent,
   children: [
     {
-      path: 'calendar',
-      component: CalendarComponent,
+      path: 'subscribers',
+      component: SubscribersComponent,
     },
     {
-      path: 'stepper',
-      component: StepperComponent,
+      path: 'add_daily',
+      component: AdddailyComponent,
     },
     {
-      path: 'list',
-      component: ListComponent,
+      path: 'description',
+      component: DescriptionComponent,
     },
     {
-      path: 'infinite-list',
-      component: InfiniteListComponent,
+      path: 'review',
+      component: ReviewComponent,
     },
     {
-      path: 'form-inputs',
-      component: NebularFormInputsComponent,
+      path: 'menu',
+      component: MenuComponent,
     },
     {
-      path: 'accordion',
-      component: AccordionComponent,
+      path: 'add_menu',
+      component: AddmenuComponent,
     },
     {
-      path: 'progress-bar',
-      component: ProgressBarComponent,
+      path: 'messages',
+      component: MessagesComponent,
     },
     {
-      path: 'spinner',
-      component: SpinnerComponent,
-    },
-    {
-      path: 'alert',
-      component: AlertComponent,
-    },
-    {
-      path: 'tree',
-      component: TreeComponent,
-    },
-    {
-      path: 'tabs',
-      component: TabsComponent,
-    },
-    {
-      path: 'calendar-kit',
-      component: CalendarKitFullCalendarShowcaseComponent,
-    },
-    {
-      path: 'chat',
-      component: ChatComponent,
+      path: 'dailymenu',
+      component: DailymenuComponent,
     },
   ],
 }];

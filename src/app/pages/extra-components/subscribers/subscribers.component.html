@@ -1,0 +1,10 @@
+<nb-card size="medium">
+  <nb-card-header>
+    Utenti sottoscritti alla newsletter
+  </nb-card-header>
+  <nb-list>
+    <nb-list-item *ngFor="let usr of users">
+      {{usr.mail}}
+    </nb-list-item>
+  </nb-list>
+</nb-card>
