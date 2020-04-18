@@ -36,7 +36,7 @@ export class DefaultButtonsComponent {
         container: 'success-container',
         containerTitle: 'Success Button',
         title: 'Success',
-        default: '#039e58',
+        default: '#e37b24',
       }, {
         class: 'btn-info',
         container: 'info-container',
@@ -76,7 +76,7 @@ export class DefaultButtonsComponent {
         container: 'success-container outline',
         containerTitle: 'Success Button',
         title: 'Success',
-        default: '#039e58',
+        default: '#e37b24',
       }, {
         class: 'btn-outline-info',
         container: 'info-container',

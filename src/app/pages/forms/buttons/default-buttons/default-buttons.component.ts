@@ -27,7 +27,7 @@ export class DefaultButtonsComponent {
       container: 'success-container',
       containerTitle: 'Success Button',
       title: 'Success',
-      default: '#039e58',
+      default: '#e37b24',
     },
     {
       status: 'info',
