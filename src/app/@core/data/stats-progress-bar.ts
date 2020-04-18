@@ -11,6 +11,25 @@ export class ProgressInfo {
   }
 }
 
+export class ChatMessage {
+  constructor(
+    public author: string,
+    public date: string,
+    public reply: boolean,
+    public message: string,
+    public avatar: string,
+  ) {
+  }
+}
+
+export class ChatMessageRequest {
+  constructor(
+    public author: string,
+    public message: string,
+  ) {
+  }
+}
+
 export class Sottoscritto {
   constructor(
     public mail: string,

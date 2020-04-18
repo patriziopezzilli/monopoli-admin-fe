@@ -32,11 +32,10 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.tokenService.get().subscribe((token: NbAuthJWTToken) => {
       if (token.isValid()) {
           this.user = token.getPayload();
-          this.user.displayName = this.user.firstName + " " + this.user.lastName;
+          this.user.displayName = this.user.firstName + ' ' + this.user.lastName;
       }
    });
   }

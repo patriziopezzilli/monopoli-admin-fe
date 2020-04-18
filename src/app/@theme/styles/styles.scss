@@ -27,6 +27,23 @@
 
 ;
 
+.nb-theme-default nb-context-menu {
+  border: 2px solid #f29c1f !important;
+}
+.nb-theme-default [nbInput].input-success {
+  border-color: #f29c1f !important;
+}
+.nb-theme-default [nbInput].active {
+  border-color: #f29c1f !important;
+}
+.btn-success.disabled, .btn-success:enabled {
+  border-color: #f29c1f !important;
+}
+
+.nb-theme-default nb-chat nb-chat-message.not-reply nb-chat-message-text .text {
+  background: #e37b24 !important;
+}
+
 article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: none;
 }

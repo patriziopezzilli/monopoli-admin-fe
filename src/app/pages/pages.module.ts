@@ -7,6 +7,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { ThemeModule } from '../@theme/theme.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import {FormsModule} from '@angular/forms';
+import {NbChatModule} from '@nebular/theme';
 
 const PAGES_COMPONENTS = [
   PagesComponent,
@@ -17,6 +18,7 @@ const PAGES_COMPONENTS = [
     PagesRoutingModule,
     ThemeModule,
     FormsModule,
+    NbChatModule,
     DashboardModule,
     ECommerceModule,
     MiscellaneousModule,
