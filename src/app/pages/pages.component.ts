@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-
-import { NbMenuItem } from '@nebular/theme';
-import { MENU_ITEMS } from './pages-menu';
-import { NbAccessChecker } from '@nebular/security';
+import {Component, OnInit} from '@angular/core';
+import {NbAccessChecker} from '@nebular/security';
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
+import {Sottoscritto} from "../@core/data/stats-progress-bar";
+import {Configuration} from "../app.component";
+import {map} from "rxjs/operators";
+import {NbMenuItem} from "@nebular/theme";
 
 @Component({
   selector: 'ngx-pages',
@@ -16,40 +19,26 @@ import { NbAccessChecker } from '@nebular/security';
 })
 export class PagesComponent implements OnInit {
 
-  menu = MENU_ITEMS;
+  menu;
 
-  constructor(private accessChecker: NbAccessChecker) {
+  constructor(private http: HttpClient) {
+    this.getMenuItem()
+      .subscribe((data) => {
+        this.menu = data;
+      });
   }
 
   ngOnInit() {
-    this.authMenuItems();
   }
 
-  authMenuItems() {
-    this.menu.forEach(item => {
-      this.authMenuItem(item);
-    });
-  }
-
-  authMenuItem(menuItem: NbMenuItem) {
-    if (menuItem.data && menuItem.data['permission'] && menuItem.data['resource']) {
-      this.accessChecker.isGranted(menuItem.data['permission'], menuItem.data['resource']).subscribe(granted => {
-        menuItem.hidden = !granted;
-      });
-    } else {
-      menuItem.hidden = true;
-    }
-    if (!menuItem.hidden && menuItem.children != null) {
-      menuItem.children.forEach(item => {
-        if (item.data && item.data['permission'] && item.data['resource']) {
-          this.accessChecker.isGranted(item.data['permission'], item.data['resource']).subscribe(granted => {
-            item.hidden = !granted;
-          });
-        } else {
-          // if child item do not config any `data.permission` and `data.resource` just inherit parent item's config
-          item.hidden = menuItem.hidden;
-        }
-      });
-    }
+  getMenuItem(): Observable<NbMenuItem[]> {
+    return this.http.get<NbMenuItem[]>(Configuration.server + '/portal/menu')
+      .pipe(
+        map(
+          (data: NbMenuItem[]) => data.map(event => {
+            return event;
+          }),
+        ),
+      );
   }
 }

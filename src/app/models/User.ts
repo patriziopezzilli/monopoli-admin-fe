@@ -5,6 +5,8 @@ export class User {
   firstName: string;
   merchant: string;
   merchantTitle: string;
+  merchantUrl: string;
+  merchantPlan: string;
   lastName: string;
   roles: string[];
   displayName: string;

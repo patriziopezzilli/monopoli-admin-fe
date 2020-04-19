@@ -12,6 +12,15 @@ export const MENU_ITEMS: NbMenuItem[] = [
     },
   },
   {
+    title: 'Template',
+    link: '/pages/extra-components/templates',
+    icon: 'nb-compose',
+    data: {
+      permission: 'view',
+      resource: 'admin',
+    },
+  },
+  {
     title: 'Descrizione',
     link: '/pages/extra-components/description',
     icon: 'nb-title',
@@ -87,5 +96,14 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/extra-components/add_daily',
       },
     ],
+  },
+  {
+    title: 'Supporto chat',
+    icon: 'nb-keypad',
+    link: '/pages/extra-components/chat',
+    data: {
+      permission: 'view',
+      resource: 'admin',
+    },
   },
 ];

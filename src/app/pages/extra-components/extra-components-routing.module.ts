@@ -10,11 +10,26 @@ import {ReviewComponent} from './review/review.component';
 import {DescriptionComponent} from './description/description.component';
 import {AdddailyComponent} from './add_daily/adddaily.component';
 import {DailymenuComponent} from './dailymenu/dailymenu.component';
+import {TemplatesComponent} from './templates/templates.component';
+import {ChatComponent} from './chat/chat.component';
+import {PlansComponent} from './plans/plans.component';
 
 const routes: Routes = [{
   path: '',
   component: ExtraComponentsComponent,
   children: [
+    {
+      path: 'plans',
+      component: PlansComponent,
+    },
+    {
+      path: 'chat',
+      component: ChatComponent,
+    },
+    {
+      path: 'templates',
+      component: TemplatesComponent,
+    },
     {
       path: 'subscribers',
       component: SubscribersComponent,
