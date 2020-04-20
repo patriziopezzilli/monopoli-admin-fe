@@ -43,7 +43,7 @@ export class HeaderComponent implements OnInit {
           });
           this.userMenu.push({
             'title': 'I miei pagamenti',
-            'link': 'this.user.merchantUrl',
+            'link': '/pages/extra-components/payments',
           });
         }
 

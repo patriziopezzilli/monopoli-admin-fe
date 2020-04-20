@@ -1,0 +1,18 @@
+<nb-card size="medium">
+  <nb-card-header>
+    I miei pagamenti
+  </nb-card-header>
+  <nb-list>
+    <nb-list-item *ngFor="let payment of payments">
+      <nb-card status="{{payment.status}}">
+        <nb-card-header style="color: white;">{{payment.name}} ({{payment.externalId}})</nb-card-header>
+        <nb-card-body>
+          {{payment.description}}
+        </nb-card-body>
+        <nb-card-footer style="font-weight: bold">
+          {{payment.amount}}
+        </nb-card-footer>
+      </nb-card>
+    </nb-list-item>
+  </nb-list>
+</nb-card>

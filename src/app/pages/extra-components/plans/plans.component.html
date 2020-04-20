@@ -13,9 +13,18 @@
                 including galaxies beyond the Milky Way.
               </nb-card-body>
               <nb-card-footer>
-                <button nbButton
+                <button *ngIf="plan !== 'SMART'"
+                        [disabled]="request || plan === 'SMART'"
+                        (click)="sendRequest('SMART');"
+                        nbButton
                         fullWidth>
                   Scegli piano (€4.90 / mese)
+                </button>
+                <button *ngIf="plan === 'SMART'"
+                        [disabled]="request || plan === 'SMART'"
+                        nbButton
+                        fullWidth>
+                  Piano attuale (€4.90 / mese)
                 </button>
               </nb-card-footer>
             </nb-card>
@@ -31,7 +40,16 @@
                 including galaxies beyond the Milky Way.
               </nb-card-body>
               <nb-card-footer>
-                <button fullWidth disabled
+                <button *ngIf="plan !== 'ADVANCED'"
+                        [disabled]="request || plan === 'ADVANCED'"
+                        (click)="sendRequest('ADVANCED');"
+                        nbButton
+                        fullWidth>
+                  Scegli piano (€6.90 / mese)
+                </button>
+                <button *ngIf="plan === 'ADVANCED'"
+                        [disabled]="request || plan === 'ADVANCED'"
+                        fullWidth disabled
                         nbButton>
                   Piano attuale (€6.90 / mese)
                 </button>
@@ -47,9 +65,18 @@
                 including galaxies beyond the Milky Way.
               </nb-card-body>
               <nb-card-footer>
-                <button nbButton
+                <button *ngIf="plan !== 'PROFESSIONAL'"
+                        [disabled]="request || plan === 'PROFESSIONAL'"
+                        (click)="sendRequest('PROFESSIONAL');"
+                        nbButton
                         fullWidth>
                   Scegli piano (€9.90 / mese)
+                </button>
+                <button *ngIf="plan === 'PROFESSIONAL'"
+                        [disabled]="request || plan === 'PROFESSIONAL'"
+                        fullWidth disabled
+                        nbButton>
+                  Piano attuale (€9.90 / mese)
                 </button>
               </nb-card-footer>
             </nb-card>
@@ -58,7 +85,8 @@
       </div>
     </nb-card-body>
     <nb-card-footer>
-      <p>Le richieste di modifica del piano web possono richiedere fino a 72h
+      <p *ngIf="request">C'è già una richiesta in corso, attendete 72h per il completamento.</p>
+      <p *ngIf="!request">Le richieste di modifica del template del sito web posson richiedere fino a 72h
         lavorative.</p>
     </nb-card-footer>
   </nb-card>

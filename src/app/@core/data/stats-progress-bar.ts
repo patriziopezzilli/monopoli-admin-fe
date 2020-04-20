@@ -37,6 +37,31 @@ export class Sottoscritto {
   }
 }
 
+export class Payment {
+  constructor(
+    public email: string,
+    public merchant: string,
+    public name: string,
+    public description: string,
+    public plan: string,
+    public amount: string,
+    public externalId: string,
+    public paid: boolean,
+    public status: string,
+  ) {
+  }
+}
+
+export class ChangeRequest {
+  constructor(
+    public type: string,
+    public previous: string,
+    public next: string,
+    public merchant: string,
+  ) {
+  }
+}
+
 export class Config {
   constructor(
     public name: string,

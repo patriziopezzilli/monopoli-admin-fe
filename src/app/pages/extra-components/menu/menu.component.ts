@@ -42,17 +42,58 @@ export class MenuComponent {
 
   modifica(id: number, nome: string, descrizione: string, prezzo: string, categoria: string) {
     this.modificaById(id, new Pasto(id, nome, descrizione, prezzo, categoria));
+
+    this.getAntipasti()
+      .subscribe((data) => {
+        this.antipasti = data;
+      });
+    this.getPrimoESecondo()
+      .subscribe((data) => {
+        this.primiesecondi = data;
+      });
+    this.getContorni()
+      .subscribe((data) => {
+        this.contorni = data;
+      });
+    this.getPizze()
+      .subscribe((data) => {
+        this.pizze = data;
+      });
+    this.getDessert()
+      .subscribe((data) => {
+        this.dessert = data;
+      });
   }
 
   delete(id: number) {
     this.deleteById(id);
+
+    this.getAntipasti()
+      .subscribe((data) => {
+        this.antipasti = data;
+      });
+    this.getPrimoESecondo()
+      .subscribe((data) => {
+        this.primiesecondi = data;
+      });
+    this.getContorni()
+      .subscribe((data) => {
+        this.contorni = data;
+      });
+    this.getPizze()
+      .subscribe((data) => {
+        this.pizze = data;
+      });
+    this.getDessert()
+      .subscribe((data) => {
+        this.dessert = data;
+      });
   }
 
   public modificaById(id: number, request: Pasto) {
     this.http.put(Configuration.server + '/menu/' + id, request).subscribe({
       complete: function () {
         console.log('> server return OK');
-        alert('Modifica effettuata con successo!');
       }, error: function (p1: any) {
         console.log('> server return ERROR');
       }, next() {
@@ -64,7 +105,6 @@ export class MenuComponent {
     this.http.delete(Configuration.server + '/menu/' + id, {}).subscribe({
       complete: function () {
         console.log('> server return OK');
-        alert('Pasto eliminato con successo!');
       }, error: function (p1: any) {
         console.log('> server return ERROR');
       }, next() {

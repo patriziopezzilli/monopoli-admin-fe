@@ -8,6 +8,7 @@ export class User {
   merchantUrl: string;
   merchantPlan: string;
   lastName: string;
+  template: string;
   roles: string[];
   displayName: string;
 }

@@ -20,12 +20,14 @@ import {DescriptionComponent} from './description/description.component';
 import {NbBadgeModule, NbRadioModule, NbStepperModule} from '@nebular/theme';
 import {ChatComponent} from './chat/chat.component';
 import {PlansComponent} from './plans/plans.component';
+import {PaymentsComponent} from "./payments/payments.component";
 
 const COMPONENTS = [
   ExtraComponentsComponent,
   AddmenuComponent,
   DailymenuComponent,
   TemplatesComponent,
+  PaymentsComponent,
   PlansComponent,
   MenuComponent,
   ChatComponent,

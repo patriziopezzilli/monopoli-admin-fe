@@ -38,6 +38,11 @@ export class MessagesComponent {
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
     };
+
+    this.getMessaggi()
+      .subscribe((data) => {
+        this.messaggi = data;
+      });
   }
 
   public post(messaggioId: number, risposta) {

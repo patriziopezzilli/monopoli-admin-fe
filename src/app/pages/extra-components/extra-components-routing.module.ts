@@ -13,11 +13,16 @@ import {DailymenuComponent} from './dailymenu/dailymenu.component';
 import {TemplatesComponent} from './templates/templates.component';
 import {ChatComponent} from './chat/chat.component';
 import {PlansComponent} from './plans/plans.component';
+import {PaymentsComponent} from "./payments/payments.component";
 
 const routes: Routes = [{
   path: '',
   component: ExtraComponentsComponent,
   children: [
+    {
+      path: 'payments',
+      component: PaymentsComponent,
+    },
     {
       path: 'plans',
       component: PlansComponent,
