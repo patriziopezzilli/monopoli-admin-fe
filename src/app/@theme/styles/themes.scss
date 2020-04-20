@@ -12,6 +12,10 @@ $nb-enabled-themes: (default, cosmic, corporate);
 $nb-themes: nb-register-theme((
   font-family-primary: unquote('Rubik, sans-serif'),
   font-family-secondary: unquote('Rubik, sans-serif'),
+  color-primary-focus: #f29c1f,
+  color-primary-hover: #f29c1f,
+  color-primary-default: #f29c1f,
+  color-primary-active: #f29c1f,
 
 ), default, default);
 
