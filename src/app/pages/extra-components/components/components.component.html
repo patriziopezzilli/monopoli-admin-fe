@@ -3,11 +3,11 @@
     Fidelity Scan
   </nb-card-header>
   <nb-card-body>
-    <barcode-scanner-livestream type="code_128" (valueChanges)="onValueChanges($event)" (started)="onStarted"></barcode-scanner-livestream>
+    <zxing-scanner [torch]="torchEnabled" [(device)]="currentDevice" (scanSuccess)="onCodeResult($event)"
+                   [formats]="formatsEnabled" [tryHarder]="tryHarder" (permissionResponse)="onHasPermission($event)"
+                   (camerasFound)="onCamerasFound($event)" (torchCompatible)="onTorchCompatible($event)"></zxing-scanner>
   </nb-card-body>
   <nb-card-footer>
-    <div [hidden]="!barcodeValue">
-      {{barcodeValue}}
-    </div>
+    Card scanned: {{ result }}
   </nb-card-footer>
 </nb-card>
