@@ -3,8 +3,9 @@
     Fidelity Scan
   </nb-card-header>
   <nb-card-body>
-    <zxing-scanner (scanSuccess)="onCodeResult($event)"
-                   [formats]="['QR_CODE', 'EAN_13', 'CODE_128', 'DATA_MATRIX']"></zxing-scanner>
+    <zxing-scanner [torch]="torchEnabled" [(device)]="currentDevice" (scanSuccess)="onCodeResult($event)"
+                   [formats]="formatsEnabled" [tryHarder]="tryHarder" (permissionResponse)="onHasPermission($event)"
+                   (camerasFound)="onCamerasFound($event)" (torchCompatible)="onTorchCompatible($event)"></zxing-scanner>
   </nb-card-body>
   <nb-card-footer>
     Card scanned: {{ result }}
