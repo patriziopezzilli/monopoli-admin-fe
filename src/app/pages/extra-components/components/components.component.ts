@@ -25,7 +25,7 @@ export class ComponentsComponent {
 
   torchEnabled = false;
   torchAvailable$ = new BehaviorSubject<boolean>(false);
-  tryHarder = false;
+  tryHarder = true;
 
   clearResult(): void {
     this.result = null;
