@@ -19,6 +19,7 @@ import {AuthGuard} from './auth.guard';
 import {FormsModule} from '@angular/forms';
 import {NbToastrModule} from '@nebular/theme';
 import {ZXingScannerModule} from '@zxing/ngx-scanner';
+import {BarecodeScannerLivestreamModule} from "ngx-barcode-scanner";
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import {ZXingScannerModule} from '@zxing/ngx-scanner';
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    BarecodeScannerLivestreamModule,
     ZXingScannerModule,
     FormsModule,
     NbToastrModule.forRoot(),

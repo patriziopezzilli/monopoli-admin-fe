@@ -7,6 +7,7 @@ import {ThemeModule} from '../@theme/theme.module';
 import {FormsModule} from '@angular/forms';
 import {NbChatModule} from '@nebular/theme';
 import {ZXingScannerModule} from '@zxing/ngx-scanner';
+import {BarecodeScannerLivestreamModule} from "ngx-barcode-scanner";
 
 const PAGES_COMPONENTS = [
   PagesComponent,
@@ -17,6 +18,7 @@ const PAGES_COMPONENTS = [
     PagesRoutingModule,
     ThemeModule,
     FormsModule,
+    BarecodeScannerLivestreamModule,
     NbChatModule,
     DashboardModule,
     ZXingScannerModule,

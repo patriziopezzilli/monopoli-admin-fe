@@ -23,6 +23,7 @@ import {PlansComponent} from './plans/plans.component';
 import {PaymentsComponent} from "./payments/payments.component";
 import {ComponentsComponent} from "./components/components.component";
 import {ZXingScannerModule} from '@zxing/ngx-scanner';
+import {BarecodeScannerLivestreamModule} from "ngx-barcode-scanner";
 
 const COMPONENTS = [
   ExtraComponentsComponent,
@@ -48,6 +49,7 @@ const MODULES = [
   ExtraComponentsRoutingModule,
   TreeModule,
   ZXingScannerModule,
+  BarecodeScannerLivestreamModule,
   NbRadioModule,
   NbStepperModule,
   ToasterModule.forRoot(),
