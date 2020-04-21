@@ -18,6 +18,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AuthGuard} from './auth.guard';
 import {FormsModule} from '@angular/forms';
 import {NbToastrModule} from '@nebular/theme';
+import {ZXingScannerModule} from '@zxing/ngx-scanner';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import {NbToastrModule} from '@nebular/theme';
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    ZXingScannerModule,
     FormsModule,
     NbToastrModule.forRoot(),
     NgbModule.forRoot(),

@@ -6,6 +6,7 @@ import {PagesRoutingModule} from './pages-routing.module';
 import {ThemeModule} from '../@theme/theme.module';
 import {FormsModule} from '@angular/forms';
 import {NbChatModule} from '@nebular/theme';
+import {ZXingScannerModule} from '@zxing/ngx-scanner';
 
 const PAGES_COMPONENTS = [
   PagesComponent,
@@ -18,6 +19,7 @@ const PAGES_COMPONENTS = [
     FormsModule,
     NbChatModule,
     DashboardModule,
+    ZXingScannerModule,
   ],
   declarations: [
     ...PAGES_COMPONENTS,

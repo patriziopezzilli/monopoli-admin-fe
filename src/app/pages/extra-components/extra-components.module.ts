@@ -21,6 +21,8 @@ import {NbBadgeModule, NbRadioModule, NbStepperModule} from '@nebular/theme';
 import {ChatComponent} from './chat/chat.component';
 import {PlansComponent} from './plans/plans.component';
 import {PaymentsComponent} from "./payments/payments.component";
+import {ComponentsComponent} from "./components/components.component";
+import {ZXingScannerModule} from '@zxing/ngx-scanner';
 
 const COMPONENTS = [
   ExtraComponentsComponent,
@@ -28,6 +30,7 @@ const COMPONENTS = [
   DailymenuComponent,
   TemplatesComponent,
   PaymentsComponent,
+  ComponentsComponent,
   PlansComponent,
   MenuComponent,
   ChatComponent,
@@ -44,6 +47,7 @@ const MODULES = [
   ThemeModule,
   ExtraComponentsRoutingModule,
   TreeModule,
+  ZXingScannerModule,
   NbRadioModule,
   NbStepperModule,
   ToasterModule.forRoot(),

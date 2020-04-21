@@ -1,0 +1,12 @@
+<nb-card size="medium">
+  <nb-card-header>
+    Fidelity Scan
+  </nb-card-header>
+  <nb-card-body>
+    <zxing-scanner (scanSuccess)="onCodeResult($event)"
+                   [formats]="['QR_CODE', 'EAN_13', 'CODE_128', 'DATA_MATRIX']"></zxing-scanner>
+  </nb-card-body>
+  <nb-card-footer>
+    Card scanned: {{ result }}
+  </nb-card-footer>
+</nb-card>
