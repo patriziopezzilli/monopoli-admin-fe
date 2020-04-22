@@ -1,13 +1,55 @@
-<nb-card size="medium">
+<nb-card size="xlarge">
   <nb-card-header>
-    Fidelity Scan
+    <div style="text-align: center;">
+      <h2>Numero carta ancora non inserito</h2>
+    </div>
   </nb-card-header>
-  <nb-card-body>
-    <zxing-scanner [torch]="torchEnabled" [(device)]="currentDevice" (scanSuccess)="onCodeResult($event)"
-                   [formats]="formatsEnabled" [tryHarder]="tryHarder" (permissionResponse)="onHasPermission($event)"
-                   (camerasFound)="onCamerasFound($event)" (torchCompatible)="onTorchCompatible($event)"></zxing-scanner>
+  <nb-card-body >
+    <nb-accordion>
+      <nb-accordion-item>
+        <nb-accordion-item-header>Scansiona carta</nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <div style="margin-bottom: 1em;">
+            <zxing-scanner [torch]="torchEnabled" [(device)]="currentDevice" (scanSuccess)="onCodeResult($event)"
+                           [formats]="formatsEnabled" [tryHarder]="tryHarder"
+                           (permissionResponse)="onHasPermission($event)"
+                           (camerasFound)="onCamerasFound($event)"
+                           (torchCompatible)="onTorchCompatible($event)"></zxing-scanner>
+          </div>
+          Numero carta fedeltà: {{ result }}
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+      <nb-accordion-item>
+        <nb-accordion-item-header>Inserimento manuale</nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <input nbInput
+                 style="margin-bottom: 0.5em;"
+                 fullWidth
+                 placeholder="315316316">
+          <button fullWidth nbButton>VALIDA</button>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+      <nb-accordion-item>
+        <nb-accordion-item-header>Utente associato</nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <button
+            style="margin-bottom: 0.5em;"
+            fullWidth nbButton>Utente già registrato</button>
+          <button fullWidth nbButton>Nuovo utente</button>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+      <nb-accordion-item>
+        <nb-accordion-item-header>Verifica e conferma</nb-accordion-item-header>
+        <nb-accordion-item-body>
+          Item Content
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+    </nb-accordion>
+
   </nb-card-body>
   <nb-card-footer>
-    Card scanned: {{ result }}
+    <div style="text-align: center; margin-bottom: 1em;">
+      <button fullWidth nbButton>AGGIUNGI</button>
+    </div>
   </nb-card-footer>
 </nb-card>

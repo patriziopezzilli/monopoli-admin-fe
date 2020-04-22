@@ -37,6 +37,19 @@ export class Sottoscritto {
   }
 }
 
+export class Promotion {
+  constructor(
+    public id: number,
+    public name: string,
+    public content: string,
+    public extraInfo: string,
+    public format: string,
+    public type: string,
+    public merchant: string,
+  ) {
+  }
+}
+
 export class Payment {
   constructor(
     public email: string,

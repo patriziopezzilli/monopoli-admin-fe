@@ -23,7 +23,8 @@ import {PlansComponent} from './plans/plans.component';
 import {PaymentsComponent} from "./payments/payments.component";
 import {ComponentsComponent} from "./components/components.component";
 import {ZXingScannerModule} from '@zxing/ngx-scanner';
-import {BarecodeScannerLivestreamModule} from "ngx-barcode-scanner";
+import {BarecodeScannerLivestreamModule} from 'ngx-barcode-scanner';
+import {PromotionComponent} from './promotions/promotion.component';
 
 const COMPONENTS = [
   ExtraComponentsComponent,
@@ -31,6 +32,7 @@ const COMPONENTS = [
   DailymenuComponent,
   TemplatesComponent,
   PaymentsComponent,
+  PromotionComponent,
   ComponentsComponent,
   PlansComponent,
   MenuComponent,

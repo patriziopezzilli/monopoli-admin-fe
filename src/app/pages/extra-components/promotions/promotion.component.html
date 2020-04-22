@@ -1,0 +1,77 @@
+<nb-card size="large">
+  <nb-card-header>Promozioni</nb-card-header>
+  <nb-card-body>
+    <div class="col-xxl-3">
+      <div class="row">
+        <div class="col-md-12">
+          <nb-accordion>
+            <nb-accordion-item *ngFor="let promo of promotions">
+              <nb-accordion-item-header>{{promo.name}}</nb-accordion-item-header>
+              <nb-accordion-item-body>
+                <div class="row">
+                  <nb-list>
+                    <nb-list-item>
+                      <a style="font-weight: bold"> Titolo:</a> {{promo.name}}
+                    </nb-list-item>
+                    <nb-list-item>
+                      <a style="font-weight: bold"> Formato:</a> Immagine
+                    </nb-list-item>
+                    <nb-list-item>
+                      <a style="font-weight: bold"> Tipologia:</a> Popup
+                    </nb-list-item>
+                    <nb-list-item>
+                      <a style="font-weight: bold"> Contenuto:</a>
+                      <img style="margin-left:2em; width: 10em;"
+                           src="{{promo.content}}">
+                    </nb-list-item>
+                    <nb-list-item>
+                      <button (click)='deleteById(promo.id);'
+                              fullWidth style="margin-top: 1.5em; background-color: #ff4c6a !important;" status="danger"
+                              nbButton>
+                        ELIMINA PROMOZIONE
+                      </button>
+                    </nb-list-item>
+                  </nb-list>
+                </div>
+              </nb-accordion-item-body>
+            </nb-accordion-item>
+          </nb-accordion>
+        </div>
+      </div>
+    </div>
+  </nb-card-body>
+  <nb-card-footer>
+    <ng-template #dialog let-data let-ref="dialogRef">
+      <nb-card>
+        <nb-card-header>Creazione nuova promozione</nb-card-header>
+        <nb-card-body>
+          <nb-list>
+            <nb-list-item>
+              <a style="font-weight: bold"> Titolo:</a> <input style="margin-left: 1.5em;" nbInput
+                                                               name="titolo" (change)="handleInputTextChange($event)"/>
+            </nb-list-item>
+            <nb-list-item>
+              <a style="font-weight: bold"> Formato:</a> Immagine
+            </nb-list-item>
+            <nb-list-item>
+              <a style="font-weight: bold"> Tipologia:</a> Popup
+            </nb-list-item>
+            <nb-list-item>
+              <a style="font-weight: bold"> Contenuto:</a>
+              <input *ngIf="imageSrc !== null" style="margin-left: 1.5em;" nbButton name="imageUrl" type="file" accept="image/*" (change)="handleInputChange($event)" />
+              <img style="margin-left:2em; width: 10em;" [src]="imageSrc" />
+            </nb-list-item>
+          </nb-list>
+        </nb-card-body>
+        <nb-card-footer>
+          <button nbButton (click)="crea();ref.close();">Crea</button>
+          <button nbButton style="margin-left:1em; background-color: #ff4c6a !important;" (click)="ref.close()">
+            Annulla
+          </button>
+        </nb-card-footer>
+      </nb-card>
+    </ng-template>
+
+    <button (click)="open(dialog)" nbButton>CREA NUOVA PROMOZIONE</button>
+  </nb-card-footer>
+</nb-card>

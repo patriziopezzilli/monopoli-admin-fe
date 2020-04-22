@@ -15,11 +15,16 @@ import {ChatComponent} from './chat/chat.component';
 import {PlansComponent} from './plans/plans.component';
 import {PaymentsComponent} from "./payments/payments.component";
 import {ComponentsComponent} from "./components/components.component";
+import {PromotionComponent} from "./promotions/promotion.component";
 
 const routes: Routes = [{
   path: '',
   component: ExtraComponentsComponent,
   children: [
+    {
+      path: 'promotions',
+      component: PromotionComponent,
+    },
     {
       path: 'components',
       component: ComponentsComponent,
