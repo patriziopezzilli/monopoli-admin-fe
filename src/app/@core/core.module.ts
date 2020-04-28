@@ -99,7 +99,7 @@ export const NB_CORE_PROVIDERS = [
           return token;
           },
        },
-        baseEndpoint: 'https://monopoli-backend.herokuapp.com/bee-content/api',
+        baseEndpoint: 'http://localhost:8081/bee-content/api',
         login: {
           endpoint: '/auth/login',
         },
